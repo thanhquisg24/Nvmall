@@ -1,0 +1,64 @@
+<input type="hidden" id="hidden_vnall_@id" value="@id">	
+	<table id="dg_@id" style="width:100%;"></table>	
+			<div id="tbar_@id" style="padding:5px;height:auto">
+				    <div style="margin-bottom:5px">
+				        <a id="idappend_@id" class="easyui-linkbutton" iconCls="icon-add" plain="true">Append</a>
+				        <a id="idremove_@id" class="easyui-linkbutton" iconCls="icon-remove" plain="true">Remove</a>
+				    </div>
+				</div>
+				
+<script type="text/javascript" >
+$(function(){	
+	$('#dg_@id').datagrid({
+	  		url: extras_Hosting["tomcatSpring_context"]+'ad/LevelPriceController/get_leveldetail_byvmall?productype_vmallid=@id',
+			toolbar: '#tbar_@id',
+		    idField:'id',
+		    remoteSort:false,
+		    method:'get',
+		    columns:[[
+		              {field:'ck',checkbox:true},
+				        {field:'id',title:'LevelPrice ID#',width:100,halign:'center',align:'left',sortable:true},
+				        {field:'name',title:'LevelPrice Name',width:150,halign:'center',align:'right',sortable:true}
+				     
+				    ]]
+	});
+	$("#idappend_@id").click(function(){
+		 $("#dialog_level").data('sgrid','#dg_@id');
+		 $("#dialog_level").data('svmall','#hidden_vnall_@id');
+		 $("#dialog_level").dialog('open');
+	});
+	$("#idremove_@id").click(function(){
+		var ids=get_multi_row_select();
+		if(ids==""){
+			$.messager.alert('Warning','Select row please!','warning');
+			return;
+		}
+		$.messager.confirm('Confirm','Are you sure you want to delete record?',function(r){
+		    if (r){
+		    	var productype_vmallid=$("#hidden_vnall_@id").val();
+		        var pdata={'str_id':ids,'product_type_vmall':productype_vmallid};
+		        extras_POST_json(true,"ad/LevelPriceController","delete_multi_leveldetail",pdata,function(data){
+		        	$.messager.alert('Result',data.message);
+		        	if(data.f=="0"){
+		        		$('#dg_@id').datagrid('clearChecked');
+		        		$('#dg_@id').datagrid('reload');
+		        	}
+		        });
+		    }
+		});
+	});
+	
+	function get_multi_row_select(){
+		 var checkedItems = $('#dg_@id').datagrid('getChecked');
+		 if(checkedItems.length>0){
+			 var ids = [];
+		        $.each(checkedItems, function(index, item){
+		        	ids.push("'"+item.id+"'");
+		        });                
+		   return ids.join(",");
+		 }
+		 return ""; 
+	}
+});	
+</script>	
+	

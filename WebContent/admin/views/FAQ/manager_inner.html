@@ -1,0 +1,33 @@
+
+<div id="tt" class="easyui-tabs" style="width:100%;">
+	<div title="Các câu hỏi thường gặp" style="padding:5px;">
+	<textarea id="my_editor_question" data-save="QUESTION"></textarea>
+	</div> <!-- end tab1 -->
+	
+	<div title="Hướng dẫn mua hàng" style="padding:5px;">
+	<textarea id="my_editor_guide_buy" data-save="GUIDE_BUY"></textarea>
+	</div> <!-- end tab2 -->
+	
+	<div title="Mua sắm thông minh" style="padding:5px;">
+	<textarea id="my_editor_smart_buy" data-save="SMART_BUY"></textarea>
+	</div> <!-- end tab2 -->
+	
+	<div title="Mua hàng đảm bảo" style="padding:5px;">
+	<textarea id="my_editor_safe_buy" data-save="SAFE_BUY"></textarea>
+	</div> <!-- end tab2 -->
+	
+	<div title="Cách thức thanh toán" style="padding:5px;">
+	<textarea id="my_editor_pay_method" data-save="PAY_METHOD"></textarea>
+	</div> <!-- end tab2 -->
+	
+		  <iframe id="form_target" name="form_target" style="display:none"></iframe>
+		<form id="my_form"  target="form_target" method="post" 
+					enctype="multipart/form-data" style="width:0px;height:0;overflow:hidden">
+		<input id="txtimage" name="txtimage" type="file" data-ideditor="my_editor_question">
+		</form>	 
+</div>		<!-- end main -->
+			  
+<!-- tab1 -->
+<script type="text/javascript" src="admin/easyui1-5/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="admin/js/jquery.ajaxfileupload.js"></script>
+<script type="text/javascript" src="admin/js/faq/main.js"></script>

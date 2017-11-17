@@ -1,0 +1,91 @@
+
+<div id="tt" class="easyui-tabs" style="width:100%;">
+	<div title="Product recommended" style="padding:5px;">
+	<table id="iddatagrip" style="width:100%;"></table>	
+			<div id="tbar" style="padding:5px;height:auto">
+				    <div style="margin-bottom:5px">
+				        <a id="idadd" class="easyui-linkbutton" iconCls="icon-add" plain="true">Add</a>
+				        <a id="idedit" class="easyui-linkbutton" iconCls="icon-edit" plain="true">Edit</a>
+				        <a id="idremove" class="easyui-linkbutton" iconCls="icon-remove" plain="true">Remove</a>
+				         <a id="btnvisible"  class="easyui-linkbutton" iconCls="icon-lock" plain="true">Visibled</a> 
+						<a id="btnunvisible"  class="easyui-linkbutton" iconCls="icon-unlock" plain="true">UnVisibled</a>
+				    </div>
+				    <div>
+				       <input id="ss" style="width:350px"></input>
+				       <div id="mm" style="width:170px">
+						
+						</div>
+				    </div>
+				</div>
+	</div> <!-- end tab1 -->
+	
+	<div title="Add/Edit" style="padding:5px;">
+	    	<div style="    margin-bottom: 7px ;padding-left: 7px;">
+	            <input class="easyui-textbox" id="idchooseproductype" label="Choose product type:" labelPosition="top" 
+	            		 style="width:20%;height:50px">  <a id="id_btn1_choose_1" class="easyui-linkbutton">Choose</a>
+	       </div>
+ 
+   
+		   <div style="padding:7px">
+		   			<div id="dg" style="width:100%"></div>
+				   <div id="tbar_tab2" style="padding:5px;height:auto">
+								    <div style="margin-bottom:5px">
+								        <a id="idappend_product_tab2" class="easyui-linkbutton" iconCls="icon-add" plain="true">Append</a>
+								        <a id="idremove_product_tab2" class="easyui-linkbutton" iconCls="icon-remove" plain="true">Remove</a>
+								    </div>
+					</div>
+		   </div>
+				<div id="dialog_s" style="padding:3px" data-selector="">
+								<table id="iddatagrip_dialog_s" ></table>
+								<div id="tbar_dialog_s" style="padding:5px;height:auto">
+								
+								    <div>
+								    	<table>
+								    		<tr>
+								    			<td>Product type Vmall:</td>
+								    			<td>Product type Parent:</td>
+								    			<td>Product type Sub</td>
+								    			<td>Customer</td>
+								    		</tr>
+								    		<tr>
+								    			<td><input id="productype_vmall_dialog_s" style="width:200px"></td>
+								    			<td><input id="productype_parent_dialog_s" style="width:200px"></td>
+						
+												</td>
+								    		</tr>
+								    	</table>
+								    </div>
+								</div>
+				</div>
+				
+				<div id="dialog_productcustomer" style="padding:3px" data-selector="">
+								<table id="dg_productcustomer" ></table>
+								<div id="tbar_productcustomer" style="padding:5px;height:auto">
+								 <div>
+								    	<table>
+								    		<tr>
+								    			<td>Customer</td>
+								    		</tr>
+								    		<tr>
+								    			<td><input id="customer_cc" style="width:200px"></input>
+												</td>
+								    		</tr>
+								    	</table>
+								    </div>
+								 
+								</div>
+				</div>
+				
+				
+		
+	</div>	<!-- end tab2 -->
+	
+</div>		<!-- end main -->			  
+<!-- tab1 -->
+<script type="text/javascript" src="admin/easyui1-5/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="admin/easyui1-5/datagrid-groupview.js"></script>
+<script type="text/javascript" src="admin/js/productrecommended/main.js"></script>
+<!-- tab2-->
+<script type="text/javascript" src="admin/js/productrecommended/dialog_main.js"></script>
+<script type="text/javascript" src="admin/js/productrecommended/dialog_product_customer.js"></script>
+<script type="text/javascript" src="admin/js/productrecommended/crud_grid.js"></script>

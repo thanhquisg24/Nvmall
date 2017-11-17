@@ -1,0 +1,35 @@
+<div class="row block_catalogies_wrap " style="display:@display" id="cate@id">
+							<div class="block_catalogy ">
+								<div class="col-md-12 cata_header">
+									<div class="col-md-3 cata_tittle">
+										<a target="_blank" href="category.html?id$@idmain"><span>@category</span><a>
+									</div>
+									<div class="col-md-9 cate-tags">
+										@category_top
+									</div>
+								</div>
+								<div class="col-xs-12 cata_content">
+									<div class="col-xs-3 cata_slider">
+										@content_slide
+									</div>
+
+									<div class="col-xs-4 cate_big_img">
+
+										<a class="cate-view" 
+											 target="_blank" href="category_second_product.html?id$@id&id2$@id2&id3$@id3" > <img	src="@product_type_image_big">
+											<span>@product_type_name</span>
+										</a>
+
+									</div>
+									<div class="col-xs-5 cata_items">										
+										@content_category_sub
+									</div>
+								</div>
+								<!-- end product -->
+								<div class="col-xs-12 block_brand_logo ">
+									<div class="block_logo">
+										@branch
+									</div>
+								</div>
+							</div>
+						</div>

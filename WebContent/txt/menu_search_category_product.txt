@@ -1,0 +1,13 @@
+<ul class="nav navbar-nav">
+					<li><a href="index.html" style="text-decoration: none;cursor: pointer;">Trang chủ <span class="tldirec">></span></a></li>
+					<li><a class="dropdown-toggle" data-toggle="dropdown" href="#">@name<span class="caret"></span><span class="tldirec">></span></a>
+							<ul class="dropdown-menu">
+								@menusub
+						</ul>
+					</li>
+					<li><a class="dropdown-toggle" data-toggle="dropdown" href="#">@subname<span class="caret"></span><span class="tldirec">></span></a>
+							<ul class="dropdown-menu">
+								@sub2
+						</ul>
+					</li>
+				</ul>	

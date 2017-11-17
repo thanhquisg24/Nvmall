@@ -1,0 +1,35 @@
+<div class="row" style="background-color:#f0f0f5;margin-bottom: 15px;padding-bottom:15px;
+					border-bottom: 1px dashed lightgray;border-top: 1px dashed lightgray;">
+					<div class="col-md-4 col-sm-6 imagesave">
+						<img alt="" src="@imgurl">
+					</div>
+					<div class="col-md-8 col-sm-6" >
+						<label class="tittlesave">@nameproduct</label>
+							<div>
+								<span style="color: #fde16d" class="glyphicon glyphicon-star"></span>
+								<span style="color: #fde16d" class="glyphicon glyphicon-star"></span>
+								<span style="color: #fde16d" class="glyphicon glyphicon-star"></span>
+								<span style="color: #e3e3e3" class="glyphicon glyphicon-star"></span>
+							</div>
+							<div class="pricesave">@priceproduct VNĐ</div>
+							<div>@property</div>
+							<div style="display:flex;margin-bottom:15px;"><span>Màu sắc : &nbsp;</span><div style="width:25px;height:25px;background-color:@color"></div></div>
+							<div>@description</div>
+							<div class="col-md-6" style="padding: 5px 0px">
+				
+								<button class="savebtn" id="id_@productid">
+									<span class="glyphicon glyphicon-shopping-cart"></span> Thêm vào
+									giỏ hàng
+								</button>
+								<br>
+								<a target= _blank href="@href"><span class="glyphicon glyphicon-share-alt"></span> Xem chi
+									tiết</a>
+							</div>
+							<div class="col-md-6" align="right">
+								<a style="color: #50a190;cursor:pointer" class="btncancel" id="@idremove"><span
+									class="glyphicon glyphicon-trash"></span><span
+									style="font-family: cursive; text-decoration: underline;">
+										Hủy chọn</span></a>
+							</div>
+					</div>
+				</div>

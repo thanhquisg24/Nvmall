@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://localhost:8080/Nvmall/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://localhost:8080/Nvmall/css/style.css">
+<link rel="stylesheet" href="http://localhost:8080/Nvmall/css/style_2.css">
+<link rel="stylesheet" href="http://localhost:8080/Nvmall/icon-font/foundation-icons.css">
+<link rel="stylesheet" href="http://localhost:8080/Nvmall/css/jquery-ui.css" type="text/css" />
+<script type="text/javascript" src="http://localhost:8080/Nvmall/js/jquery-1.10.2.js"></script> <!--publish comment -->
+<script type="text/javascript" charset="utf-8" src="http://localhost:8080/Nvmall/js/js.cookie.js"></script>
+<script type="text/javascript" charset="utf-8" src="http://localhost:8080/Nvmall/js/jquery-ui.js"></script>
+<script type="text/javascript" charset="utf-8" src="http://localhost:8080/Nvmall/js/jquery.session.js"></script>
+<script type="text/javascript" charset="utf-8" src="http://localhost:8080/Nvmall/js/bootstrap.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="http://localhost:8080/Nvmall/js/extra.js"></script>
+<script type="text/javascript" charset="utf-8" src="http://localhost:8080/Nvmall/js/blockUI.js"></script>
+<script type="text/javascript" charset="utf-8" src="http://localhost:8080/Nvmall/js/dialog.js"></script>
+<script type="text/javascript" charset="utf-8" src="http://localhost:8080/Nvmall/js/extrablock.js"></script>
+<script type="text/javascript" charset="utf-8" src="http://localhost:8080/Nvmall/js/client/header.js"></script>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="300">
+	<!-- header 1 -->
+
+	<nav class="navbar navbar-default"  style="z-index: 1000">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html" style="cursor:pointer;padding-top:10px"><img id="imglogo"
+					src="http://localhost:8080/Nvmall/image/loader.gif"> </a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<!-- <li class="active"><a href="#">Home</a></li> -->
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+						<li><a style="text-decoration: none;cursor: pointer;" id="linkhome1">Trang chủ</a></li>
+						<li><a class="dropdown-toggle" data-toggle="dropdown" href="#">Hướng dẫn <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a style="text-decoration: none;cursor: pointer;" id="linkquestion">Các câu hỏi thường gặp</a></li>
+								<li><a style="text-decoration: none;cursor: pointer;" id="linkbuyintro">Hướng dẫn mua hàng</a></li>
+								<li><a style="text-decoration: none;cursor: pointer;" id="linkshopping">Mua sắm thông minh</a></li>
+								<li><a style="text-decoration: none;cursor: pointer;" id="linkbuyproduct">Mua hàng đảm bảo</a></li>
+								<li><a style="text-decoration: none;cursor: pointer;" id="linkpaymentway">Cách thức thanh toán</a></li>
+								<li><a style="text-decoration: none;cursor: pointer;" id="linkdilivery">Giao hàng toàn quốc</a></li>
+								<li><a style="text-decoration: none;cursor: pointer;" id="linkaboutvivmall">Về vivmall</a></li>
+						</ul></li>					
+						<li><a style="text-decoration: none;cursor: pointer;" id="linkcheckorder">Kiểm tra đơn hàng</a></li>						
+						<li><a style="text-decoration: none;cursor: pointer;" id="linkviewproduct">Sản phẩm đã xem</a></li>
+						<li><a href="compare_product.html">Sản phẩm so sánh</a></li>
+						<li><a style="text-decoration: none;cursor: pointer;" id="linklikeproduct3">Sản phẩm đã thích</a></li>
+						<li><a href="http://shop.vivmall.vn" target="_blank">Mở shop</a></li>													
+						<li class="infobelogin"><a id="linkregister" style="cursor: pointer;">Đăng ký</a></li>
+						<li class="infobelogin"><a id="linklogin" style="cursor: pointer;">Đăng nhập</a></li>						
+						<li class="infoaflogin" style="display: none"><a class="dropdown-toggle" data-toggle="dropdown" href="#">								
+								<span id="userlogin"></span>
+								<i class="fa fa-angle-double-down"
+									style="font-size: 18px; background-color: none; color: white; padding: 2px">
+								</i>
+								<span class="caret"></span>
+							</a>								
+								<ul class="dropdown-menu">
+									<li><a style="text-decoration: none;cursor: pointer;" id="linkgeneralaccount">Thông tin chung</a></li>
+									<li><a style="text-decoration: none;cursor: pointer;" id="linkinfoaccount">Thông tin tài khoản</a></li>
+									<li><a style="text-decoration: none;cursor: pointer;" id="linkorderhistory">Đơn hàng của tôi</a></li>
+									<li><a style="text-decoration: none;cursor: pointer;" id="linksaveproduct">Để dành mua sau</a></li>
+									<li><a style="text-decoration: none;cursor: pointer;" id="linkcommendproduct">Sản phẩm đánh giá</a></li>
+									<li><a style="text-decoration: none;cursor: pointer;" id="linknewsproduct">Sản phẩm nhận tin tức</a></li>
+								</ul>
+						</li>
+						<li class="infoaflogin" style="display: none"><a id="linklogout" style="cursor: pointer;">Đăng xuất</a></li>
+						<li></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- header 2 -->
+	<nav class="navbar navbar-default box-shadow" id="header"
+		data-spy="affix" data-offset-top="400">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="logo">
+						<a id="linkhome" style="cursor:pointer;"><img src="image/vivlogo.jpg" alt="Vivmall"></a>
+					</div>
+
+				</div>
+				<div class="col-sm-4">
+					<div class="search_box">
+						<form>
+							<input value="" type="text" id="search-form"> 
+							<input id="btnsearchbasic"	type="button">
+						</form>
+
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="shop_cart">
+						<div class="row">
+							<div class="col-xs-6" style="padding:0px 15px;">							
+								<a id="linkshoppingcart" style="cursor: pointer;" class="btn "> <span
+									class="glyphicon glyphicon-shopping-cart"></span> Giỏ hàng <span
+									class="badge" id="count_product_shopping_cart">0</span>
+								</a>
+							</div>
+							<div class="col-xs-6" style="padding:0px 15px;">
+								<a id="linklikeproduct" style="cursor: pointer;"  class="btn "> <span
+									class="glyphicon glyphicon-heart"></span> Yêu thích <span
+									class="badge" id="count_product_love">0</span>
+								</a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</nav>
+
+<nav class="navbar navbar-default header3 ">
+		<div class="container">
+			<div class="" id="myNavbar2">
+				<ul class="nav navbar-nav ">
+					<li class="catalogies">
+						<div class="dropdown-toggle header3_items header3_first_item"
+							data-toggle="dropdown" href="#">
+							<span><i class="fi-list"></i></span>
+							<div class="name">Danh mục</div>
+						</div>
+						<div class="banner">
+							<div class="">								
+								<nav class=cataloge id="menu_main">
+									<ul class="list-group cataloge_list" id="ul_menu_main">
+										
+									</ul>
+								</nav>								
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="header3_items" href="#">
+							<div class="name">Hỏi đáp</div>
+
+						</div>
+					</li>
+					<li>
+						<div class="header3_items" href="#">							
+							<div class="name">Đánh giá / phản hồi</div>
+
+						</div>
+					</li>
+					<li>
+						<div class="header3_items" href="#">							
+							<div class="name">Blog</div>
+
+						</div>
+					</li>
+					<li>
+						<div class="header3_items" href="#">							
+							<div class="name">Thông tin shop</div>
+
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+
+
+	<!-- right menu -->
+
+	<div class="menu_right">
+		<div class="menu_right_top "></div>
+		<div class="menu_right_center ">
+			<div class="menu_right_wrap_items">
+				<div class="menu_right_item text-center ">
+					<a id="linkshoppingcart2"> <span class="glyphicon glyphicon-shopping-cart"></span> <br>
+						Giỏ hàng
+					</a>
+				</div>
+				<div class="menu_right_item text-center ">
+					<a id="linklikeproduct2"> <span class="glyphicon glyphicon-heart"></span>
+
+					</a>
+				</div>
+				<div class="menu_right_item text-center ">
+					<a id="linkratingproduct"> <span class="glyphicon glyphicon-star"></span>
+					</a>
+				</div>
+				<div class="menu_right_item text-center ">
+					<a id="linkviewproduct2"> <span class="glyphicon glyphicon-time"></span>
+					</a>
+				</div>
+				<div class="menu_right_item text-center ">
+					<a id="linkfeedback"> <span class="glyphicon glyphicon-comment"></span>
+					</a>
+				</div>
+			</div>
+
+		</div>
+		<div class="menu_right_bottom scrollToTop">
+			<div class="menu_right_wrap_items">
+				<div class="menu_right_item text-center ">
+					<a id="scrolltoTop"> <span class="glyphicon glyphicon-chevron-up"></span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$("#scrolltoTop").click(function() {
+				$("html, body").animate({
+					scrollTop : 0
+				}, 600);
+				return false;
+			});
+		});
+	</script>
+	
+	<!--het GIO HANG -->
+</body>
+</html>
+<div id="dialogmanual" style="display: none">
+	<div class="row">
+		<div class="col-md-12">
+			<div id="content_message" style="color: black; font-size: 15px;"></div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,5 @@
+<li data-transition="random" data-slotamount="7" data-masterspeed="300" data-title="Slide">
+                        <!-- MAIN IMAGE -->
+                        <img src="@imageurl"  alt="slide2" style="width:1100px;"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+                       
+                     </li>

@@ -1,0 +1,53 @@
+
+				<div class="panel-group">
+					<div class="panel panel-default" id="catgory-col-left-data">
+						<!--<div class="panel-heading">
+							<h4 class="panel-title">
+								<a>Thời trang nữ</a> <span class="ic" data-toggle="collapse"
+									href="#collapse1"> <svg class="icon icon-a_down">
+										<use xlink:href="#icon-a_down"></use></svg>
+								</span>
+							</h4>
+						</div>
+						<div id="collapse1" class="panel-collapse collapse">
+							<ul class="list-group">
+								<li class="list-group-item">One</li>
+								<li class="list-group-item">Two</li>
+								<li class="list-group-item">Three</li>
+							</ul>
+						</div>  -->
+					</div>
+				</div>
+<script type="text/javascript">
+$(function(){
+	var spring_context=ReturnHosing_tomcat();
+	var html='<div class="panel-heading"><h4 class="panel-title">'
+	+'<a>@product_type_vmall_name</a> '
+	+'<span class="ic" data-toggle="collapse" href="#collapse@_collapse"> <svg class="icon icon-a_down">'
+			+'<use xlink:href="#icon-a_down"></use></svg></span></h4></div>'
+			+'<div id="collapse@_collapse" class="panel-collapse collapse"><ul class="list-group">'
+			+'  @listgroupitem   </ul></div>';
+	var listgroupitem='<li class="list-group-item">@product_type_sub_name</li>';		
+	$.get(spring_context+"Saleoff/get_sale_list_catgory",function(data){
+		if(data!=null){
+			$("#catgory-col-left-data").html('');
+			var temphtml="";
+			for(i=0;i<data.length;i++){
+				var oje=data[i];
+					temphtml=html;
+				 	temphtml=temphtml.replace(/@product_type_vmall_name/g,oje.product_type_name);
+					temphtml=temphtml.replace(/@_collapse/g,i);
+					var strgroupitem="";
+					for(var j=0;j<oje.list_cate_sub.length;j++){
+						var cate_sub=oje.list_cate_sub[j];
+						var strtem=listgroupitem;
+					    strgroupitem =strgroupitem +""+strtem.replace(/@product_type_sub_name/g,cate_sub.product_type_name);
+					}
+					temphtml=temphtml.replace(/@listgroupitem/g,strgroupitem);
+			}//end for i
+			$("#catgory-col-left-data").html(temphtml);
+		}
+	},'json');
+			
+});
+</script>

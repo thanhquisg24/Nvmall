@@ -1,0 +1,84 @@
+<div id="p" style="padding:5px;width:100%;">
+	<table id="iddatagrip"  style="width:100%;"></table>
+	
+	<div id="tbar" style="padding:5px;height:auto">
+		    <div style="margin-bottom:5px">
+		       <!--  <a id="idadd" class="easyui-linkbutton" iconCls="icon-add" plain="true">Add</a> -->
+		        <a id="idedit" class="easyui-linkbutton" iconCls="icon-edit" plain="true">Edit</a>
+		        <a id="idremove" class="easyui-linkbutton" iconCls="icon-remove" plain="true">Remove</a>
+		        <a id="btnvisible"  class="easyui-linkbutton" iconCls="icon-lock" plain="true">Visibled</a> 
+				<a id="btnunvisible"  class="easyui-linkbutton" iconCls="icon-unlock" plain="true">UnVisibled</a>
+		        <a id="btnapprove" class="easyui-linkbutton" iconCls="icon-ok" plain=true>Approve</a>
+		        
+		    </div>
+		    <div>
+		       <input id="ss" style="width:350px"></input>
+		       <div id="mm" style="width:120px">
+				
+				</div>
+		    </div>
+	</div>
+		
+			  
+</div>
+
+<div id="dlgcreate" class="easyui-dialog" title="Confirm" closed="true"
+	data-options="iconCls:'icon-save',minimizable:false,maximizable:false,closable:false"
+	style="width: 500px; height: 200px; padding: 5px;">
+	<div class="easyui-layout" data-options="fit:true" style="padding:10px;">
+	<form id="ff" method="post"  >
+				<input type="hidden" value="A" name="ptype" id="idptype">
+				<input type="hidden" value="" name="category_img" id="id_uploadsuccess">
+				<input type="hidden" value="" name="id" id="id_ID">
+				<table class="tb_padding">
+				
+					<tr>
+							<td>Customer : </td>
+							<td><input id="cc3" style="width:100%" name="customerid" ></td>
+					</tr>
+					
+					<tr>
+							<td>Category Id : </td>
+							<td><input id="cc4" style="width:100%" name="customercate" ></td>
+					</tr>
+					<tr>
+							<td>Category name : </td>
+							<td><input id="cc6" style="width:100%" name="typenamecus" ></td>
+					</tr>
+					<tr><td colspan="2"><hr></td></tr>
+					<tr>
+							<td>Product type vmall:</td>
+							<td><input id="cc" style="width:200px" name="typevmall" ></td>
+					</tr>
+					<tr>
+							<td>Group category :</td>
+							<td><input id="cc2" style="width:100%" name="typeparent" ></td>
+					</tr>
+					<tr>
+							<td>Category sub:</td>
+							<td><input id="cc5" style="width:100%" name="typesub" ></td>
+					</tr>
+				
+				</table>
+		</form>		
+		<form id="upload_immg">
+			<table class="tb_padding">
+				<tr>
+							  <td>Category Image:</td>
+							<td>  
+							<input class="easyui-filebox"  name="txtimage"  id="txtimage"  data-options="prompt:'Choose a file...'" style="width:220px">
+							<br>
+							<strong id="strongmessage"> </strong>
+							
+							</td>
+					</tr>
+			
+			</table>
+			</form>
+	</div>
+</div>
+
+
+<script type="text/javascript" src="admin/easyui1-5/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="admin/js/jquery.ajaxfileupload.js"></script>
+<script type="text/javascript" src="admin/js/catgorycustomer/main.js"></script>	

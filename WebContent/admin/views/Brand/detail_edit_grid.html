@@ -1,0 +1,57 @@
+
+
+<div style="float:left;width:30%">
+	<form method="post">
+		<input type="hidden" value="@branchidvalue" name="branchid">
+		<input type="hidden" value="@branchimgvalue" name="branchimage" id="branchimginput_@index">
+        <div style="margin-bottom:5px">
+            <input class="easyui-textbox" value="@branchnamevalue" name="branchname" label="Branch Name:" labelPosition="top" style="width:100%;">
+        </div>
+ 		<div style="margin-bottom:5px">
+            <input class="easyui-textbox" value="@branchcountryvalue" name="branchcountry" label="Branch Contry:" labelPosition="top" style="width:100%;">
+        </div>
+    </form>    
+        
+       <div style="margin-bottom:5px">
+        	Upload image: <input type="file" id="dotxtimage_@index" name="dotxtimage_@index"  style="width:100%;">
+        </div>
+        
+        <div style="text-align:center">
+            <a  class="easyui-linkbutton"   iconCls="icon-save"  onclick="save1(this)">Save</a>
+            <a  class="easyui-linkbutton"   iconCls="icon-cancel" onclick="cancel1(this)">Cancel</a>
+        </div>
+</div>
+
+
+<div style="float:left;width:70%;">
+     <img src="@branchimg_display" id="branchimg_@index" style="width:150px;heght:150px;margin:10px"/>
+</div>
+<script>
+$(function(){
+
+	$('input[name="dotxtimage_@index"]').ajaxfileupload({
+	    'action':  extras_Hosting["tomcatSpring_context"]+"ad/UploadController/upload_image_normal_withparam?folder=save_imgbranch",
+	    'onComplete': function(response) {	
+	        if (response.status==false) {
+	        	$.messager.alert('Error',response.message,'error');
+	        }
+	        if (response.status==true) {
+	        	//$.messager.alert('Info',response.message,'info');
+	            var pram = response.pram;
+	            $("#branchimginput_@index").val(pram);
+	            $("#branchimg_@index").attr('src','upload/branch/'+pram);
+	        }
+
+	    },
+	    'onStart': function() {
+	    	var fileSize = this.get(0).files[0].size;
+	     	if(fileSize>1024*1000){
+	     		$.messager.alert('Warning','File này có kích cỡ lớn hơn cho phép. Xin chọn hình ảnh khác!!','warning');
+	     		$("#branchimginput_@index").val('');
+	     		return false;
+	     	}
+	    }
+	});
+});
+
+</script>

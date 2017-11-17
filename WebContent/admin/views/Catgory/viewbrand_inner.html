@@ -1,0 +1,66 @@
+<input type="hidden" id="hidden_@2id" value="@2id">	
+	<table id="dg_@2id" style="width:100%;"></table>	
+			<div id="tbar_@2id" style="padding:5px;height:auto">
+				    <div style="margin-bottom:5px">
+				        <a id="idappend_@2id" class="easyui-linkbutton" iconCls="icon-add" plain="true">Append</a>
+				        <a id="idremove_@2id" class="easyui-linkbutton" iconCls="icon-remove" plain="true">Remove</a>
+				    </div>
+				</div>
+				
+<script type="text/javascript" >
+$(function(){	
+	$('#dg_@2id').datagrid({
+	  		url: extras_Hosting["tomcatSpring_context"]+'ad/branddetailproductypeController/get_branddetail_byproduct_type_id?product_type_id=@2id',
+			toolbar: '#tbar_@2id',
+		    idField:'brand_id',
+		    remoteSort:false,
+		    method:'get',
+		    columns:[[
+		            {field:'ck',checkbox:true},
+		  	        {field:'brand_id',title:'Code',width:150,halign:'center',sortable:true},
+		  	        {field:'brand_0_name',title:'Name',width:150,align:'left',halign:'center',sortable:true},
+		  	        {field:'brand_0_image',title:'Image',width:150,align:'left',halign:'center',sortable:true,formatter:extras_formatImg_datagrid_branch},
+		  	        {field:'brand_0_country',title:'Country',width:150,align:'left',halign:'center',sortable:true},
+		  	        {field:'isvisible',title:'Is visibled',width:100,align:'center',halign:'center',sortable:true,formatter:extras_formatstatus_datagrid}
+				    ]]
+	});
+	$("#idappend_@2id").click(function(){
+		 $("#dialog_choosebrand").data('sgrid','#dg_@2id');
+		 $("#dialog_choosebrand").data('sproductypesub','#hidden_@2id');
+		 $("#dialog_choosebrand").dialog('open').dialog('center');
+	});
+	$("#idremove_@2id").click(function(){
+		var ids=get_multi_row_select();
+		if(ids==""){
+			$.messager.alert('Warning','Select row please!','warning');
+			return;
+		}
+		$.messager.confirm('Confirm','Are you sure you want to delete record?',function(r){
+		    if (r){
+		    	var product_type_id=$("#hidden_@2id").val();
+		        var pdata={'str_id':ids,'product_type_id':product_type_id};
+		        extras_POST_json(true,"ad/branddetailproductypeController","delete_multi_branddetail",pdata,function(data){
+		        	$.messager.alert('Result',data.message);
+		        	if(data.f=="0"){
+		        		$('#dg_@2id').datagrid('clearChecked');
+		        		$('#dg_@2id').datagrid('reload');
+		        	}
+		        });
+		    }
+		});
+	});
+	
+	function get_multi_row_select(){
+		 var checkedItems = $('#dg_@2id').datagrid('getChecked');
+		 if(checkedItems.length>0){
+			 var ids = [];
+		        $.each(checkedItems, function(index, item){
+		        	ids.push("'"+item.brand_id+"'");
+		        });                
+		   return ids.join(",");
+		 }
+		 return ""; 
+	}
+});	
+</script>	
+	

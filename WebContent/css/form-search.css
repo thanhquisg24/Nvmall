@@ -1,0 +1,36 @@
+#searchbox {
+	background: #048004;	
+	border-width: 1px;
+	border-style: solid;
+	border-color: #c4d9df #a4c3ca #83afb7;
+	width: 630px;
+	height: 50px;
+	padding:2px;
+	overflow: hidden;
+}
+#search-form, #btnsearchbasic {
+	float: left;
+}
+
+#search-form {
+	height: 44px;
+	width: 500px;
+	border: 1px solid #a4c3ca;
+	font: normal 13px 'trebuchet MS', arial, helvetica;	
+	padding-right:10px;
+	
+}
+
+#btnsearchbasic {
+	background: #048004;
+	border-width: 1px;
+	border-style: none;
+	border-color: #7eba7c #578e57 #447d43;
+	height: 44px;
+	margin-left:1px;	
+	padding: 0;
+	width: 123px;
+	cursor: pointer;
+	font: bold 15px Arial, Helvetica;
+	color: white;
+}

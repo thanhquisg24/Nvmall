@@ -1,0 +1,55 @@
+
+<div id="p" style="padding:5px;width:100%;">
+	<table id="iddatagrip" style="width:100%;"></table>
+	
+	<!--<table id="dg" class="easyui-datagrid"   
+			style="width:600px;height:250px"
+			 toolbar="#tbar" 
+		  data-options="url:'admin/datagrid_data.json',fitColumns:true,singleSelect:true">
+		<thead>
+        <tr>
+            <th data-options="field:'code',width:100">Code</th>
+            <th data-options="field:'name',width:100">Name</th>
+            <th data-options="field:'price',width:100,align:'right'">Price</th>
+        </tr>
+    </thead>
+		
+		</table>*/  -->
+		
+	<div id="tbar" style="padding:5px;height:auto">
+		    <div style="margin-bottom:5px">
+		       <!--  <a id="idadd" class="easyui-linkbutton" iconCls="icon-add" plain="true">Add</a>
+		        <a id="idedit" class="easyui-linkbutton" iconCls="icon-edit" plain="true">Edit</a> -->
+		         <a id="btnvisible"  class="easyui-linkbutton" iconCls="icon-lock" plain="true">Visibled</a> 
+				<a id="btnunvisible"  class="easyui-linkbutton" iconCls="icon-unlock" plain="true">UnVisibled</a>
+		        <a id="idapprove" class="easyui-linkbutton" iconCls="icon-gear" plain="true">Approve</a>
+		        <a id="idunapprove" class="easyui-linkbutton" iconCls="icon-gear" plain="true">UnApprove</a>
+		       
+		    </div>
+		    <div>
+		       <input id="ss" style="width:350px"></input>
+		       <div id="mm" style="width:170px">
+				
+				</div>
+		    </div>
+	</div>
+		
+			  
+</div>
+
+
+<div id="dlg" class="easyui-dialog" title="Confirm" closed="true"
+	data-options="modal:true,closable:false"
+	style="width: 800px; height: 600px; padding: 5px;">
+	<div class="easyui-layout" data-options="fit:true" style="padding:5px;">
+			<div id="vpdf" style="width:100%; height: 100%;"></div>
+	</div>
+</div>
+
+
+<script type="text/javascript" src="admin/easyui1-5/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="admin/js/pdfobject.min.js"></script>
+<script type="text/javascript" src="admin/js/customer/main.js"></script>	
+
+
+

@@ -1,0 +1,20 @@
+<div class="ttl-category">Nhãn hiệu nổi tiếng</div>
+						<div class="control-box-qt pager">
+								<div  data-slide="next" href="#myCarousel-br" class="control_button btn_next" style="float:left;cursor:pointer;" >
+									<i class="glyphicon glyphicon-chevron-left"></i>
+								</div>
+								<div  data-slide="prev" href="#myCarousel-br" class="control_button btn_prev"  style="float:left;cursor:pointer;">
+									<i class="glyphicon glyphicon-chevron-right"></i>
+								</div>
+						</div>
+						<div class="block_recommend">
+							<div class="carousel slide" id="myCarousel-br">
+								<div class="carousel-inner" >	
+									@contain_brand										
+								</div>								
+							
+							</div>
+							<!-- /#myCarousel -->
+
+						</div>
+						<!-- /.col-xs-12 -->

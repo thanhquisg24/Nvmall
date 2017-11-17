@@ -1,0 +1,133 @@
+
+<div id="tt" class="easyui-tabs" style="width:100%;">
+	<div title="News" style="padding:5px;">
+	<table id="iddatagrip" style="width:100%;"></table>	
+			<div id="tbar" style="padding:5px;height:auto">
+				    <div style="margin-bottom:5px">
+				        <a id="idadd" class="easyui-linkbutton" iconCls="icon-add" plain="true">Add</a>
+				        <a id="idedit" class="easyui-linkbutton" iconCls="icon-edit" plain="true">Edit</a>
+				        <a id="idremove" class="easyui-linkbutton" iconCls="icon-remove" plain="true">Remove</a>
+				         <a id="btnvisible"  class="easyui-linkbutton" iconCls="icon-lock" plain="true">Visibled</a> 
+						<a id="btnunvisible"  class="easyui-linkbutton" iconCls="icon-unlock" plain="true">UnVisibled</a>
+				    </div>
+				    <div>
+				       <input id="ss" style="width:350px"></input>
+				       <div id="mm" style="width:170px">
+						
+						</div>
+				    </div>
+				</div>
+		
+	</div> <!-- end tab1 -->
+	
+	<div title="Add/Edit" style="padding:5px;">
+	    	<div style="    margin-bottom: 5px ;padding-left: 7px;">
+	       		<label class="textbox-label textbox-label-top" style="text-align: left;">News Catgory:</label>
+	            <input  id="cc_catgorynews" style="width:20%;">  
+	            <!-- <a id="id_btn1_addnew_catgorynews" class="easyui-linkbutton">Add Catgory News</a> -->
+	         
+	       </div>
+	       
+	       <div style="    margin-bottom: 5px ;padding-left: 7px;">
+	       		<label class="textbox-label textbox-label-top" style="text-align: left;">News title:</label>
+	           		<input id="newstitle"  style="width:40%;" class="easyui-textbox" data-options="required:true,validType:{length:[0,125]}" data-ptype="A" data-newsid="0">
+	            <a id="id_btn1_view_img" class="easyui-linkbutton">View image</a>
+	       </div>
+	        <div style="    margin-bottom: 5px ;padding-left: 7px;">
+	       		<label class="textbox-label textbox-label-top" style="text-align: left;">Short Description:</label>
+	           		<input id="newsshort_description"  style="width:70%;" class="easyui-textbox" data-options="required:true,validType:{length:[0,225]}" >
+	       </div>
+	       <div>
+	       		<textarea id="my_editor_news" ></textarea>
+	       </div>
+	<div id="dialog_ae_catgorynews" >
+		<div style="margin:0;padding:20px 50px">
+				<form id="fm_catgorynews" method="post" novalidate >
+					<div style="margin-bottom:20px;font-size:14px;border-bottom:1px solid #ccc">Catgory News</div>
+						<input type="hidden" name="ptype" value='A' >
+						<input type="hidden" name="idcatgorynews" value='0' >
+						<input type="hidden" name="imgcatgorynews" value='' >
+					<div style="margin-bottom:10px">
+						<input  id="idfm_catgorynewsname" name="namecatgorynews" class="easyui-textbox"  data-options="required:true,validType:{length:[0,50]}"  labelPosition="top" label="Name:" style="width:100%">
+					</div>
+				</form>
+					<div style="margin-bottom:10px;text-align:center;">
+						<img  src="" style="width:100px;heght:100px"/>
+					</div>
+					<div style="margin-bottom:10px">
+				 		<input  class="easyui-filebox"  name="dotxtimage"  id="dotxtimage"  data-options="prompt:'Upload image...'" style="width:100%">
+					</div>
+			</div>		
+	</div>	
+	<div id="dialog_news_img" >
+		<div style="margin:0;padding:20px 50px">
+					<input type="hidden" id="idnewsimg" value='' >
+					<div style="margin-bottom:10px;text-align:center;">
+						<img  src="upload/no_image.jpg" style="width:100px;heght:100px"/>
+					</div>
+					<div style="margin-bottom:10px">
+				 		<input  class="easyui-filebox"  name="donewsimg"  id="donewsimg"  data-options="prompt:'Upload image...'" style="width:100%">
+					</div>
+			</div>		
+	</div>	
+	
+	  <iframe id="form_target" name="form_target" style="display:none"></iframe>
+		<form id="my_form"  target="form_target" method="post" 
+					enctype="multipart/form-data" style="width:0px;height:0;overflow:hidden">
+		<input id="txtimage" name="txtimage" type="file" data-ideditor="my_editor_news">
+		</form>	 	
+	</div>	<!-- end tab2 -->
+	
+	
+</div>		<!-- end main -->
+			  
+<!-- tab1 -->
+<script type="text/javascript" src="admin/easyui1-5/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="admin/js/jquery.ajaxfileupload.js"></script>
+<script type="text/javascript" src="admin/js/news/main.js"></script>
+<!-- tab12 -->
+<script type="text/javascript" src="admin/js/news/combogrid_cc_catgorynews.js"></script>
+<script type="text/javascript" src="admin/js/news/dialog_ae_catgorynews.js"></script>
+<script type="text/javascript" src="admin/js/news/add_edit_news.js"></script>
+<script type="text/javascript">
+var check_action_click_cc_catgorynews=false;
+function editrow_catgorynews(target){
+	check_action_click_cc_catgorynews=true;
+	var index=target;
+	var row=$('#cc_catgorynews').combogrid('grid').datagrid('getRows')[index];
+	if(row){
+		//alert(row.id+"_"+row.property_name+"_"+row.product_type_sub_id);
+		$('#dialog_ae_catgorynews').dialog('open').dialog('center').dialog('setTitle','Edit Catgory News '+ row.id);
+		$('#fm_catgorynews').form('clear');
+		$('#fm_catgorynews').find('input[name=ptype]').val('E');
+		$('#fm_catgorynews').find('input[name=idcatgorynews]').val(row.id);
+		$('#idfm_catgorynewsname').textbox('setValue',row.name);
+	}else{
+		$.messager.alert('Warning','Select Catgory News please!','warning');
+	}
+}	
+function deleterow_catgorynews(target){
+	check_action_click_cc_catgorynews=true;
+	var index=target;
+	var row=$('#cc_catgorynews').combogrid('grid').datagrid('getRows')[index];
+	if(row){
+		//alert( extras_Hosting["tomcatSpring_context"]);
+		$.messager.confirm('Confirm','Are you sure you want to delete  "'+row.name+'"?',function(r){
+		    if (r){
+		    	var city="'"+row.location_id+"'";
+		    	var pdata={"strthanhpho":city,"strquan":"","strphuong":""};
+		    	var url= extras_Hosting["tomcatSpring_context"]+"ad/locationController/delete_multi_location";
+		    	 extras_POST_json(true,"ad/locationController","delete_multi_location",pdata,function(data){
+			        	$.messager.alert('Result',data.message);
+			        	if(data.f=="0"){
+			    			$('#cc_catgorynews').combogrid('grid').datagrid('deleteRow',index);
+			        	}
+			        });     
+		    }
+		});
+	}else{
+		$.messager.alert('Warning','Select row please!','warning');
+	}
+}	
+
+</script>

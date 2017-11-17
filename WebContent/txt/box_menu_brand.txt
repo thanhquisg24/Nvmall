@@ -1,0 +1,13 @@
+<div class="panel-heading">
+							<h4 class="panel-title">
+								<a>@name</a> <span class="ic" data-toggle="collapse"
+									href="#collapse@id"> <svg class="icon icon-a_down">
+										<use xlink:href="#icon-a_down"></use></svg>
+								</span>
+							</h4>
+						</div>
+						<div id="collapse@id" class="panel-collapse collapse">
+							<ul class="list-group">
+								@content_brand
+							</ul>
+						</div>

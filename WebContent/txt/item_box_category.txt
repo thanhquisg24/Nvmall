@@ -1,0 +1,20 @@
+<div class="row box-main-category" style="display:@display">
+							<div class="col-md-12">
+								<span class="ttl-category">@name</span>
+							</div>
+							<div class="col-md-12">
+								<div class="row">
+									<div class="col-md-3">									
+										@branch										
+									</div>
+									<div class="col-md-3">
+										<div class="box-item-menu-category_lar">
+											@boxlag
+										</div>
+									</div>
+									<div class="col-md-6">										
+										@rowbox
+									</div>
+								</div>
+							</div>
+						</div>

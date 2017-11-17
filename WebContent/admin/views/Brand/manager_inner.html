@@ -1,0 +1,157 @@
+
+<div id="tt" class="easyui-tabs" style="width:100%;">
+	<div title="Branch" style="padding:5px;">
+	<table id="iddatagrip" style="width:100%;"></table>	
+			<div id="tbar" style="padding:5px;height:auto">
+				    <div style="margin-bottom:5px">
+				        <a id="idadd" class="easyui-linkbutton" iconCls="icon-add" plain="true">Add</a>
+				        <a id="idedit" class="easyui-linkbutton" iconCls="icon-edit" plain="true">Edit</a>
+				        <a id="idremove" class="easyui-linkbutton" iconCls="icon-remove" plain="true">Remove</a>
+				         <a id="btnvisible"  class="easyui-linkbutton" iconCls="icon-lock" plain="true">Visibled</a> 
+						<a id="btnunvisible"  class="easyui-linkbutton" iconCls="icon-unlock" plain="true">UnVisibled</a>
+				    </div>
+				    <div>
+				       <input id="ss" style="width:350px"></input>
+				       <div id="mm" style="width:170px">
+						
+						</div>
+				    </div>
+				</div>
+		<div id="dialog_brand" >
+			<div style="margin:0;padding:20px 50px">
+				<form id="fm_brand" method="post" novalidate >
+					<div style="margin-bottom:20px;font-size:14px;border-bottom:1px solid #ccc">Brand Info</div>
+						<input type="hidden" name="ptype" value='A' id='idfm_ptype'>
+						<input type="hidden" name="brandid" value='0' id="idfm_brandid">
+						<input type="hidden" name="brandimg" value='' id="idfm_brandimg">
+					<div style="margin-bottom:10px">
+						<input  id="idfm_brandname" name="brandname" class="easyui-textbox" required="true"  labelPosition="top" label="Brand Name:" style="width:100%">
+					</div>
+					<div style="margin-bottom:10px">
+						<input  id="idfm_brandcontry" name="brandcontry" class="easyui-textbox" required="true"  labelPosition="top" label="Brand Contry:" style="width:100%">
+					</div>
+				</form>
+					<div style="margin-bottom:10px;text-align:center;">
+						<img id="img_brand" src="" style="width:100px;heght:100px"/>
+					</div>
+					<div style="margin-bottom:10px">
+				 		<input  class="easyui-filebox"  name="dotxtimage"  id="dotxtimage"  data-options="prompt:'Upload image...'" style="width:100%">
+					</div>
+			</div>
+		</div>		
+	</div> <!-- end tab1 -->
+<!--	
+	<div title="Add/Edit" style="padding:5px;">
+	    	<div style="    margin-bottom: 7px ;padding-left: 7px;">
+	            <input class="easyui-textbox" id="idchooseproductype" label="Choose product type:" labelPosition="top" 
+	            		 style="width:20%;height:50px">  <a id="id_btn1_choose_1" class="easyui-linkbutton">Choose</a>
+	       </div>
+ 
+   
+		   <div style="padding:7px">
+		   			<div id="dg" style="width:100%"></div>
+				   <div id="tbar_tab2" style="padding:5px;height:auto">
+								    <div style="margin-bottom:5px">
+								        <a id="idappend_branch_tab2" class="easyui-linkbutton" iconCls="icon-add" plain="true">Append</a>
+								        <a id="idremove_branch_tab2" class="easyui-linkbutton" iconCls="icon-remove" plain="true">Remove</a>
+								    </div>
+					</div>
+		   </div>
+				<div id="dialog_s" style="padding:3px" data-selector="">
+								<table id="iddatagrip_dialog_s" ></table>
+								<div id="tbar_dialog_s" style="padding:5px;height:auto">
+								
+								    <div>
+								    	<table>
+								    		<tr>
+								    			<td>Productype Vmall:</td>
+								    			<td>Productype Sub:</td>
+								    			<td>Search:</td>
+								    		</tr>
+								    		<tr>
+								    			<td><input id="productype_vmall_dialog_s" style="width:200px"></td>
+								    			<td><input id="productype_sub_dialog_s" style="width:200px"></td>
+								    			<td>  <input id="ss_dialog_s" style="width:200px"></input>
+										       <div id="mm_dialog_s" style="width:120px">
+												</div>
+												</td>
+								    		</tr>
+								    	</table>
+								    </div>
+								</div>
+				</div>
+		
+	</div>-->	<!-- end tab2 -->
+	
+	
+</div>		<!-- end main -->
+			  
+<!-- tab1 -->
+<script type="text/javascript" src="admin/easyui1-5/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="admin/easyui1-5/datagrid-detailview.js"></script>
+<script type="text/javascript" src="admin/js/jquery.ajaxfileupload.js"></script>
+<script type="text/javascript" src="admin/js/brand/dialog_brand.js"></script>
+<script type="text/javascript" src="admin/js/brand/main.js"></script>
+
+<!-- tab2-->
+<!--
+<script type="text/javascript" src="admin/js/jquery.ajaxfileupload.js"></script>
+<script type="text/javascript" src="admin/js/brand/dialog_main.js"></script>
+<script type="text/javascript" src="admin/js/brand/crud_grid.js"></script>
+<script type="text/javascript">
+function save1(target){
+    var tr = $(target).closest('.datagrid-row-detail').closest('tr').prev();
+    var index = parseInt(tr.attr('datagrid-row-index'));
+    saveItem(index);
+}
+function cancel1(target){
+    var tr = $(target).closest('.datagrid-row-detail').closest('tr').prev();
+    var index = parseInt(tr.attr('datagrid-row-index'));
+    //console.log(index)
+    cancelItem(index);
+}
+function cancelItem(index){
+	var row = $('#dg').datagrid('getRows')[index];
+	if (row.isNewRecord){
+		$('#dg').datagrid('deleteRow',index);
+	} else {
+		$('#dg').datagrid('collapseRow',index);
+	}
+}
+function saveItem(index){
+	var type='A';
+	var  product_type_id=$("#idchooseproductype").textbox('getValue');
+	if(product_type_id==null||product_type_id==""){
+		  $.messager.alert('Warning', 'Please choose product type first!!!', 'warning');
+		  return false;
+	}
+	var row = $('#dg').datagrid('getRows')[index];
+	if(row.isNewRecord ){
+		 type='A';
+		
+	}else{
+		 type='E';
+	}
+	var url = extras_Hosting["tomcatSpring_context"]+'ad/branchController/add_update_branch?ptype='+type+'&product_type_id='+product_type_id
+	$('#dg').datagrid('getRowDetail',index).find('form').form('submit',{
+		url: url,
+		onSubmit: function(){
+			return $(this).form('validate');
+		},
+		success: function(result){
+			/*data = eval('('+data+')');
+			data.isNewRecord = false;
+			$('#dg').datagrid('collapseRow',index);
+			$('#dg').datagrid('updateRow',{
+				index: index,
+				row: data
+			});*/
+			var data=JSON.parse(result);
+	        $.messager.alert('Info', data.message, 'info');
+	    	$('#dg').datagrid('clearChecked');
+	    	$('#dg').datagrid('reload');
+		}
+	});
+}
+</script>
+-->

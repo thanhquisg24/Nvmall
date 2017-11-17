@@ -1,0 +1,9 @@
+<div class="block-nav">
+				  <ul>
+				    <li>
+				      <h4><a class="title" href="@href">@category_name</a></h4>
+				    </li>
+				    @content_cateogory
+				  </ul>
+				</div>
+				

@@ -1,0 +1,272 @@
+[
+ {
+	    "id":0,
+	    "text":"Config",
+	    "iconCls":"icon-base",
+	    "attributes":{
+	   	   "viahref":""
+	      },
+			    "children":[{
+			        "text":"Ngan luong",
+			        "iconCls":"icon-gear",
+			        "attributes":{
+			            "viahref":"nganluong"
+			        }  
+			    },
+			    {
+			        "text":"Fee",
+			        "iconCls":"icon-gear",
+			        "attributes":{
+			            "viahref":"fee"
+			        }  
+			    },
+			    {
+			        "text":"Publish",
+			        "iconCls":"icon-gear",
+			        "attributes":{
+			            "viahref":"publish"
+			        }  
+			    }]
+	},
+{
+	    "id":2,
+	    "text":"Rule",
+	    "iconCls":"icon-base",
+	    "attributes":{
+	   	   "viahref":""
+	      },
+			    "children":[{
+			        "text":" Đề án",
+			        "iconCls":"icon-gear",
+			        "attributes":{
+			            "viahref":"scheme"
+			        }  
+			    },
+			    {
+			        "text":"Qui Chế Mẫu",
+			        "iconCls":"icon-gear",
+			        "attributes":{
+			            "viahref":"regulartion"
+			        }  
+			    }]
+	},	
+ {
+    "id":1,
+    "text":"DEMO",
+    "iconCls":"icon-base",
+    "attributes":{
+   	   "viahref":""
+      },
+		    "children":[{
+		        "text":"Index",
+		        "iconCls":"icon-gear",
+		        "attributes":{
+		            "viahref":"index"
+		        }  
+		    },
+		    {
+		        "text":"Demo CRUD",
+		        "iconCls":"icon-gear",
+		        "attributes":{
+		            "viahref":"democrud"
+		        }  
+		    },
+		    {
+		        "text":"Member",
+		        "iconCls":"icon-gear",
+		        "attributes":{
+		            "viahref":"member"
+		        }  
+		    },
+		    {
+		        "text":"About",
+		        "state":"open",
+		        "iconCls":"icon-gear",
+		        "attributes":{
+		        	   "viahref":"about"
+		        }  
+		    }, 
+		    {
+		        "text":"testtab",
+		        "state":"open",
+		        "iconCls":"icon-gear",
+		        "attributes":{
+		        	   "viahref":"testtab"
+		        }  
+		    }]
+},
+
+{
+    "text":"Main ",
+    "state":"open",
+    "iconCls":"icon-base",
+    "attributes":{
+   	   "viahref":""
+      },
+    "children":[
+			    {
+			        "text":"Slide manager",
+			        "iconCls":"icon-gear",
+			        "attributes":{
+			     	   "viahref":"slidemanager"
+			        }  
+			    },
+			    {
+			        "text":"Nation",
+			        "iconCls":"icon-gear",
+			        "attributes":{
+			      	   "viahref":"nation"
+			         }  
+			    },
+			    {
+			        "text":"Location",
+			        "iconCls":"icon-gear",
+			        "attributes":{
+			      	   "viahref":"location"
+			         }  
+			    }, {
+			        "text":"FAQ",
+			        "iconCls":"icon-gear",
+			        "attributes":{
+			      	   "viahref":"faq"
+			         }  
+			    }]
+},
+{
+    "text":"News ",
+    "state":"open",
+    "iconCls":"icon-base",
+    "attributes":{
+   	   "viahref":""
+      },
+      "children":[
+			    {
+			        "text":"Category News",
+			        "iconCls":"icon-gear",
+			        "attributes":{
+			     	   "viahref":"newcategory"
+			        }  
+			    },
+			     {
+			        "text":"News detail",
+			        "iconCls":"icon-gear",
+			        "attributes":{
+			     	   "viahref":"news"
+			        }  
+			    }]
+},			        
+{
+    "text":"Customer",
+    "state":"open",
+    "attributes":{
+   	   "viahref":""
+      },
+    "iconCls":"icon-base",
+    "children":[
+			    {
+			        "text":"Customer manager",
+			        "iconCls":"icon-gear",
+			        "attributes":{
+			     	   "viahref":"Customermanager"
+			        }  
+			    },
+			    {
+			        "text":"Brand",
+			        "iconCls":"icon-gear",
+			        "attributes":{
+			      	   "viahref":"Branch"
+			         }  
+			    },
+			    {
+			        "text":"Color",
+			        "iconCls":"icon-gear",
+			        "attributes":{
+			      	   "viahref":"Color"
+			         }  
+			    }]
+},
+{
+    "text":"Catgory Manager",
+    "state":"open",
+    "iconCls":"icon-base",
+    "attributes":{
+   	   "viahref":""
+      },
+    "children":[{
+        "text":"Product type vmall",
+        "iconCls":"icon-gear",
+        "attributes":{
+     	   "viahref":"producttypevmall"
+        }  
+    },{
+        "text":"Product type sub",
+        "iconCls":"icon-gear",
+        "attributes":{
+     	   "viahref":"producttypesub"
+        }  
+    },{
+        "text":"Product type customer",
+        "iconCls":"icon-gear",
+        "attributes":{
+     	   "viahref":"producttypecustomer"
+        }  
+    },
+        {
+        "text":"Property",
+        "iconCls":"icon-gear",
+        "attributes":{
+     	   "viahref":"property"
+        }  
+    },{
+        "text":"Level Price",
+        "iconCls":"icon-gear",
+        "attributes":{
+      	   "viahref":"levelprice"
+         }  
+    }]
+},
+{	"text":"Product Manager",
+    "state":"open",
+    "iconCls":"icon-base",
+    "attributes":{
+   	   "viahref":""
+      },
+    "children":[{
+		   		"text":"Product recommended",
+		        "iconCls":"icon-gear",
+		        "attributes":{
+		     	   "viahref":"productrecommended"
+		        }  
+    }]
+},
+{	"text":"Order Manager",
+    "state":"open",
+    "iconCls":"icon-base",
+    "children":[{
+		   		"text":"Check order",
+		        "iconCls":"icon-gear",
+		        "attributes":{
+		     	   "viahref":"checkorder"
+		        }  
+    }]
+
+},
+
+{	"text":"For Engineering",
+    "state":"open",
+    "iconCls":"icon-base",
+    "attributes":{
+  	   "viahref":""
+     },
+    "children":[{
+		   		"text":"Product type sub",
+		        "iconCls":"icon-gear",
+		        "attributes":{
+		     	   "viahref":"E_producttypesub"
+		        }  
+    }]
+
+}
+
+
+]

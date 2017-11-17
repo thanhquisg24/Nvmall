@@ -1,0 +1,20 @@
+<div class="ttl-category">Có thể bạn quan tâm</div>
+						<div class="control-box-qt pager">
+								<div  data-slide="next" href="#myCarousel-qt" class="control_button btn_next" style="float:left;cursor:pointer;" >
+									<i class="glyphicon glyphicon-chevron-left"></i>
+								</div>
+								<div  data-slide="prev" href="#myCarousel-qt" class="control_button btn_prev"  style="float:left;cursor:pointer;">
+									<i class="glyphicon glyphicon-chevron-right"></i>
+								</div>
+						</div>
+						<div class="block_recommend">
+							<div class="carousel slide" id="myCarousel-qt">
+								<div class="carousel-inner" >	
+									@contain_product_care										
+								</div>								
+							
+							</div>
+							<!-- /#myCarousel -->
+
+						</div>
+						<!-- /.col-xs-12 -->

@@ -1,0 +1,1972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style_2.css">
+<link rel="stylesheet" href="icon-font/foundation-icons.css">
+<link rel="stylesheet" href="css/jquery-ui.css" type="text/css" />
+
+<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/jquery-ui.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.session.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/extra.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/blockUI.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/dialog.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/extrablock.js"></script>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="300">
+	<!-- header 1 -->
+
+	<nav class="navbar navbar-default"  style="z-index: 1000">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="" style=""><img 
+					src="image/vivlogo.png" alt="Vivmall"> </a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<!-- <li class="active"><a href="#">Home</a></li> -->
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+						<li><a class="dropdown-toggle" data-toggle="dropdown" href="#">Hướng dẫn <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a style="text-decoration: none;cursor: pointer;" id="linkquestion">Các câu hỏi thường gặp</a></li>
+								<li><a style="text-decoration: none;cursor: pointer;" id="linkbuyintro">Hướng dẫn mua hàng</a></li>
+								<li><a style="text-decoration: none;cursor: pointer;" id="linkshopping">Mua sắm thông minh</a></li>
+								<li><a style="text-decoration: none;cursor: pointer;" id="linkbuyproduct">Mua hàng đảm bảo</a></li>
+								<li><a style="text-decoration: none;cursor: pointer;" id="linkpaymentway">Cách thức thanh toán</a></li>
+								<li><a style="text-decoration: none;cursor: pointer;" id="linkdilivery">Giao hàng toàn quốc</a></li>
+								<li><a style="text-decoration: none;cursor: pointer;" id="linkaboutvivmall">Về vivmall</a></li>
+						</ul></li>
+					
+						<li><a style="text-decoration: none;cursor: pointer;" id="linkcheckorder">Kiểm tra đơn hàng</a></li>						
+						<li><a style="text-decoration: none;cursor: pointer;" id="linkviewproduct">Sản phẩm đã xem</a></li>
+						<li><a style="text-decoration: none;cursor: pointer;" id="linklikeproduct3">Sản phẩm đã thích</a></li>
+						<li><a href="http://shop.vivmall.vn" target="_blank">Mở shop</a></li>													
+						<li class="infobelogin"><a id="linkregister" style="cursor: pointer;">Đăng ký</a></li>
+						<li class="infobelogin"><a id="linklogin" style="cursor: pointer;">Đăng nhập</a></li>						
+						<li class="infoaflogin" style="display: none"><a class="dropdown-toggle" data-toggle="dropdown" href="#">								
+								<span id="userlogin"></span>
+								<i class="fa fa-angle-double-down"
+									style="font-size: 18px; background-color: none; color: white; padding: 2px">
+								</i>
+								<span class="caret"></span>
+							</a>								
+								<ul class="dropdown-menu">
+									<li><a style="text-decoration: none;cursor: pointer;" id="linkgeneralaccount">Thông tin chung</a></li>
+									<li><a style="text-decoration: none;cursor: pointer;" id="linkinfoaccount">Thông tin tài khoản</a></li>
+									<li><a style="text-decoration: none;cursor: pointer;" id="linkorderhistory">Đơn hàng của tôi</a></li>
+									<li><a style="text-decoration: none;cursor: pointer;" id="linksaveproduct">Để dành mua sau</a></li>
+									<li><a style="text-decoration: none;cursor: pointer;" id="linkcommendproduct">Sản phẩm đánh giá</a></li>
+									<li><a style="text-decoration: none;cursor: pointer;" id="linknewsproduct">Sản phẩm nhận tin tức</a></li>
+								</ul>
+						</li>
+						<li class="infoaflogin" style="display: none"><a id="linklogout" style="cursor: pointer;">Đăng xuất</a></li>
+						<li></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- header 2 -->
+	<nav class="navbar navbar-default box-shadow" id="header"
+		data-spy="affix" data-offset-top="400">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-4">
+					<div class="logo">
+						<img src="image/vivlogo.jpg" alt="Vivmall"">
+					</div>
+
+				</div>
+				<div class="col-xs-4">
+					<div class="search_box">
+						<form>
+							<input value="" type="text" id="search-form"> 
+							<input id="btnsearchbasic"	type="button">
+						</form>
+
+					</div>
+				</div>
+				<div class="col-xs-4">
+					<div class="shop_cart">
+						<div class="row">
+							<div class="col-xs-6">
+								<a id="linkshoppingcart" style="cursor: pointer;" class="btn "> <span
+									class="glyphicon glyphicon-shopping-cart"></span> Giỏ hàng <span
+									class="badge" id="count_product_shopping_cart">0</span>
+								</a>
+							</div>
+							<div class="col-xs-6">
+								<a id="linklikeproduct" style="cursor: pointer;"  class="btn "> <span
+									class="glyphicon glyphicon-heart"></span> Yêu thích <span
+									class="badge" id="count_product_love">0</span>
+								</a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+
+	<!-- header 3 -->
+
+
+
+	<nav class="navbar navbar-default header3 ">
+		<div class="container">
+			<div class="" id="myNavbar2">
+				<ul class="nav navbar-nav ">
+					<li>
+						<div class="dropdown-toggle header3_items header3_first_item"
+							data-toggle="dropdown" href="#">
+							<span><i class="fi-list"></i></span>
+							<div class="name">Danh mục</div>
+						</div>
+					</li>
+					<li>
+						<div class="header3_items" href="#">
+
+							<span><i class="fi-star"></i></span>
+							<div class="name">Xu hướng</div>
+
+						</div>
+					</li>
+					<li>
+						<div class="header3_items" href="#">
+							<span><i class="fi-burst-sale"></i></span>
+							<div class="name">Khuyến mãi</div>
+
+						</div>
+					</li>
+					<li>
+						<div class="header3_items" href="#">
+							<span><i class="fi-dollar"></i></span>
+							<div class="name">Bán chạy</div>
+
+						</div>
+					</li>
+					<li>
+						<div class="header3_items" href="#">
+							<span><i class="fi-sheriff-badge"></i></span>
+							<div class="name">Thương hiệu</div>
+
+						</div>
+					</li>
+					<li>
+						<div class="header3_items" href="#">
+							<span><i class="fi-clipboard-notes"></i></span>
+							<div class="name">Sự kiện</div>
+
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="banner">
+			<div class="items_by_catalogue" id="content-slide" style="display:none">			
+
+			</div>
+			<div class="items_by_catalogue" id="content-slide_loading" style="height:400px;line-height:400px;text-align:center">			
+				<img src="image/loading.gif" style="height:130px;width:195px;" />		
+			</div>
+			<nav class=cataloge id="menu_main" style="display:none">
+				<ul class="list-group cataloge_list" id="ul_menu_main">
+					
+				</ul>
+			</nav>
+			<nav class="cataloge" id="loading_menu_main">
+				<ul class="list-group cataloge_list">
+					<li class="list-group-item-loading" style="height:400px;line-height:400px;text-align:center">
+						<img src="image/loading.gif" style="height:130px;width:195px;" />				
+					</li>
+				</ul>
+			</nav>	
+		</div>
+	</div>
+
+	/* ---------------------------------------content-------------------------------------- */
+	<style>
+	
+ 
+		.content{
+			padding-top:20px;
+			height: auto;
+
+		}
+		img { max-width:100%; }
+
+		a {
+		    -webkit-transition: all 150ms ease;
+			-moz-transition: all 150ms ease;
+			-ms-transition: all 150ms ease;
+			-o-transition: all 150ms ease;
+			transition: all 150ms ease; 
+			}
+		    
+		a:hover {
+		    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE 8 */
+		    filter: alpha(opacity=90); /* IE7 */
+		    opacity: 0.9;
+		    text-decoration: none;
+		}
+		.carousel-inner{
+			overflow: hidden;
+		}
+
+		.thumbnails{
+			padding: 0px;
+			
+		}
+		.thumbnails li> .fff .thumbnail{
+			padding: 0;
+			border: none;
+			margin: 0;
+			border-radius: 0px;
+		}
+		
+		/* Page Header */
+		.page-header {
+		    background: #f9f9f9;
+		    margin: -30px -40px 40px;
+		    padding: 20px 40px;
+		    border-top: 4px solid #ccc;
+		    color: #999;
+		    text-transform: uppercase;
+		}
+		    
+		.page-header h3 {
+		    line-height: 0.88rem;
+		    color: #000;
+		}
+
+		ul.thumbnails { 
+		    margin-bottom: 0px;
+		}
+
+
+
+		/* Thumbnail Box */
+
+	
+
+		.thumbnails li> .fff .thumbnail img{
+			height: 200px;
+
+		}
+		.thumbnails li> .fff {
+			position:relative;
+			height: 200px;
+		}
+		.thumbnails li> .fff .caption { 
+		    background:#fff !important; 
+		    position:absolute;
+		    bottom: 0;
+		    width: 100%;
+			background: rgba(255, 255, 255, 0.43) !important;
+			line-height: 30px;
+			height: 30px;
+		}
+		.thumbnails li> .fff:hover .caption { 
+			background: rgba(1,1,1,0.6) !important;
+			color:#FFF;
+			cursor: pointer;
+		}
+
+		.items_list li:last-child .fff{
+
+		}
+
+		/* Carousel Control */
+		.control-box {
+		    text-align: right;
+		    width: 100%;
+		}
+
+		.control_button{
+			width: 30px; 
+			height: 50px; 
+			position: absolute; 
+			top: 50%;margin-top:-30px; 
+			text-align: center; 
+			padding-top: 17px;
+			background:rgba(168, 168, 168, 0.73) none repeat scroll 0% 0%;
+			border-radius:2px;
+			cursor: pointer;
+
+
+		}
+		.control_button:hover{
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE 8 */
+		    filter: alpha(opacity=50); /* IE7 */
+		    opacity: 0.6;
+		    text-decoration: none;
+		}
+		.btn_next{
+
+		}
+		.btn_prev{
+			right:0;
+		}
+
+		/* Mobile Only */
+		@media (max-width: 767px) {
+		    .page-header, .control-box {
+		        text-align: center;
+		    } 
+		}
+		@media (max-width: 479px) {
+		    .caption {
+		        word-break: break-all;
+		    }
+		}
+
+
+		li { list-style-type:none;}
+
+		::selection { background: #ff5e99; color: #FFFFFF; text-shadow: 0; }
+		::-moz-selection { background: #ff5e99; color: #FFFFFF; }
+
+
+
+	</style>
+	<script type="text/javascript">
+			// Carousel Auto-Cycle
+	  $(document).ready(function() {
+	    $('.carousel').carousel({
+	      interval: 6000
+	    })
+	  });
+	</script>
+	<div class="content" style="">
+		<div class="container">
+				<div class="block_recommend">
+				        
+				    <div class="carousel slide" id="myCarousel1">
+				        <div class="carousel-inner">
+				            <div class="item active">
+				                    <ul class="thumbnails items_list">
+				                        <li class="col-xs-2" style="padding: 0px;">
+				    						<div class="fff">
+												<div class="thumbnail">
+													<a href="#"><img src="https://media3.scdn.vn/img1/2015/8_26/75007f_simg_695dbd_220x220_maxb.jpg" alt=""></a>
+												</div>
+												<div class="caption text-center">
+													<p>Túi xách thời trang</p>
+										
+												</div>
+				                            </div>
+				                        </li>
+				                        <li class="col-xs-2" style="padding: 0px;">
+											<div class="fff">
+												<div class="thumbnail">
+													<a href="#"><img src="https://media3.scdn.vn/img1/2015/8_26/75007f_simg_695dbd_220x220_maxb.jpg" alt=""></a>
+												</div>
+												<div class="caption text-center">
+													
+													<p>Túi xách thời trang</p>
+										
+												</div>
+				                            </div>
+				                        </li>
+				                        <li class="col-xs-2" style="padding: 0px;">
+				    						<div class="fff">
+												<div class="thumbnail">
+													<a href="#"><img src="https://media3.scdn.vn/img1/2015/8_26/75007f_simg_695dbd_220x220_maxb.jpg" alt=""></a>
+												</div>
+												<div class="caption text-center">
+													<p>Túi xách thời trang</p>
+										
+												</div>
+				                            </div>
+				                        </li>
+				                        <li class="col-xs-2" style="padding: 0px;">
+											<div class="fff">
+												<div class="thumbnail">
+													<a href="#"><img src="https://media3.scdn.vn/img1/2015/8_26/75007f_simg_695dbd_220x220_maxb.jpg" alt=""></a>
+												</div>
+												<div class="caption text-center">
+													
+													<p>Túi xách thời trang</p>
+										
+												</div>
+				                            </div>
+				                        </li>
+				                        <li class="col-xs-2" style="padding: 0px;">
+											<div class="fff">
+												<div class="thumbnail">
+													<a href="#"><img src="https://media3.scdn.vn/img1/2015/8_26/75007f_simg_695dbd_220x220_maxb.jpg" alt=""></a>
+												</div>
+												<div class="caption text-center">
+													
+													<p>Túi xách thời trang</p>
+										
+												</div>
+				                            </div>
+				                        </li>
+				                        <li class="col-xs-2" style="padding: 0px;">
+											<div class="fff">
+												<div class="thumbnail">
+													<a href="#"><img src="https://media3.scdn.vn/img1/2015/8_26/75007f_simg_695dbd_220x220_maxb.jpg" alt=""></a>
+												</div>
+												<div class="caption text-center">
+													
+													<p>Túi xách thời trang</p>
+										
+												</div>
+				                            </div>
+				                        </li>
+				                    </ul>
+				              </div><!-- /Slide1  
+				            <div class="item">
+				                    <ul class="thumbnails items_list">
+				                    	<li class="col-xs-2" style="padding: 0px;">
+				    						<div class="fff">
+												<div class="thumbnail">
+													<a href="#"><img src="https://media3.scdn.vn/img1/2015/8_26/75007f_simg_695dbd_220x220_maxb.jpg" alt=""></a>
+												</div>
+												<div class="caption text-center">
+													<p>Túi xách thời trang</p>
+										
+												</div>
+				                            </div>
+				                        </li>
+				                        <li class="col-xs-2" style="padding: 0px;">
+											<div class="fff">
+												<div class="thumbnail">
+													<a href="#"><img src="https://media3.scdn.vn/img1/2015/8_26/75007f_simg_695dbd_220x220_maxb.jpg" alt=""></a>
+												</div>
+												<div class="caption text-center">
+													
+													<p>Túi xách thời trang</p>
+										
+												</div>
+				                            </div>
+				                        </li>
+				                        <li class="col-xs-2" style="padding: 0px;">
+											<div class="fff">
+												<div class="thumbnail">
+													<a href="#"><img src="https://media3.scdn.vn/img1/2015/8_26/75007f_simg_695dbd_220x220_maxb.jpg" alt=""></a>
+												</div>
+												<div class="caption text-center">
+													
+													<p>Túi xách thời trang</p>
+										
+												</div>
+				                            </div>
+				                        </li>
+				                        <li class="col-xs-2" style="padding: 0px;">
+											<div class="fff">
+												<div class="thumbnail">
+													<a href="#"><img src="https://media3.scdn.vn/img1/2015/8_26/75007f_simg_695dbd_220x220_maxb.jpg" alt=""></a>
+												</div>
+												<div class="caption text-center">
+													
+													<p>Túi xách thời trang</p>
+										
+												</div>
+				                            </div>
+				                        </li>
+				                        <li class="col-xs-2" style="padding: 0px;">
+											<div class="fff">
+												<div class="thumbnail">
+													<a href="#"><img src="https://media3.scdn.vn/img1/2015/8_26/75007f_simg_695dbd_220x220_maxb.jpg" alt=""></a>
+												</div>
+												<div class="caption text-center">
+													
+													<p>Túi xách thời trang</p>
+										
+												</div>
+				                            </div>
+				                        </li>
+				                        <li class="col-xs-2" style="padding: 0px;">
+											<div class="fff">
+												<div class="thumbnail">
+													<a href="#"><img src="https://media3.scdn.vn/img1/2015/8_26/75007f_simg_695dbd_220x220_maxb.jpg" alt=""></a>
+												</div>
+												<div class="caption text-center">
+													
+													<p>Túi xách thời trang</p>
+										
+												</div>
+				                            </div>
+				                        </li>
+				                    </ul>
+				              </div><!-- /Slide2 --> 
+				            <div class="item">
+				                    <ul class="thumbnails items_list">
+				                    	<li class="col-xs-2" style="padding: 0px;">
+				    						<div class="fff">
+												<div class="thumbnail">
+													<a href="#"><img src="https://media3.scdn.vn/img1/2015/8_26/75007f_simg_695dbd_220x220_maxb.jpg" alt=""></a>
+												</div>
+												<div class="caption text-center">
+													<p>Túi xách thời trang</p>
+										
+												</div>
+				                            </div>
+				                        </li>
+				                        <li class="col-xs-2" style="padding: 0px;">
+											<div class="fff">
+												<div class="thumbnail">
+													<a href="#"><img src="https://media3.scdn.vn/img1/2015/8_26/75007f_simg_695dbd_220x220_maxb.jpg" alt=""></a>
+												</div>
+												<div class="caption text-center">
+													
+													<p>Túi xách thời trang</p>
+										
+												</div>
+				                            </div>
+				                        </li>
+				                        <li class="col-xs-2" style="padding: 0px;">	
+											<div class="fff">
+												<div class="thumbnail">
+													<a href="#"><img src="https://media3.scdn.vn/img1/2015/8_26/75007f_simg_695dbd_220x220_maxb.jpg" alt=""></a>
+												</div>
+												<div class="caption text-center">
+													
+													<p>Túi xách thời trang</p>
+										
+												</div>
+				                            </div>
+				                        </li>
+				                        <li class="col-xs-2" style="padding: 0px;">
+											<div class="fff">
+												<div class="thumbnail">
+													<a href="#"><img src="https://media3.scdn.vn/img1/2015/8_26/75007f_simg_695dbd_220x220_maxb.jpg" alt=""></a>
+												</div>
+												<div class="caption text-center">
+													
+													<p>Túi xách thời trang</p>
+										
+												</div>
+				                            </div>
+				                        </li>
+				                        <li class="col-xs-2" style="padding: 0px;">
+											<div class="fff">
+												<div class="thumbnail">
+													<a href="#"><img src="https://media3.scdn.vn/img1/2015/8_26/75007f_simg_695dbd_220x220_maxb.jpg" alt=""></a>
+												</div>
+												<div class="caption text-center">
+													
+													<p>Túi xách thời trang</p>
+										
+												</div>
+				                            </div>
+				                        </li>
+				                        <li class="col-xs-2" style="padding: 0px;">
+											<div class="fff">
+												<div class="thumbnail">
+													<a href="#"><img src="https://media3.scdn.vn/img1/2015/8_26/75007f_simg_695dbd_220x220_maxb.jpg" alt=""></a>
+												</div>
+												<div class="caption text-center">
+													
+													<p>Túi xách thời trang</p>
+										
+												</div>
+				                            </div>
+				                        </li>
+				                    </ul>
+				              </div><!-- /Slide3 --> 
+				        </div>
+				        
+				       
+					   
+							<div class="control-box pager">
+								<div  data-slide="next" href="#myCarousel" class="control_button btn_next" >
+									<i class="glyphicon glyphicon-chevron-left"></i>
+								</div>
+								<div  data-slide="prev" href="#myCarousel" class="control_button btn_prev" >
+									<i class="glyphicon glyphicon-chevron-right"></i>
+								</div>
+							</div>
+						
+					   <!-- /.control-box -->   
+				                              
+				    </div><!-- /#myCarousel -->
+				        
+				</div><!-- /.col-xs-12 -->  
+		
+				<style type="text/css">
+					.block_catalogy{
+						
+						border: 1px solid #FFF;
+						border-top-width: 2px;
+						border-top-color: #31447b;
+						background: #FFF;
+						min-height: 200px;
+						margin-top:40px;
+					}
+					.cata_header{
+						padding: 0;
+						margin: 0;
+						border-bottom: 1px solid rgba(49, 68, 123, 0.44);
+					}
+					.cata_tittle{
+						font-size: 19px;
+						font-weight: bold;
+						color: #31447b;
+						line-height: 50px;
+						text-transform: uppercase;
+						display: block;
+						padding: 0 20px; 
+						text-align: center;
+					}
+					.cate-tags{
+						height: 40px;
+						padding: 10px;
+						overflow: hidden;
+					}
+					.cate-tags a {
+					    display: inline-block;
+					    background-color: #fff;
+					    line-height: 24px;
+					    border: 1px solid #e7e7e7;
+					    text-align: center;
+					    border-radius: 1px;
+					    padding: 0 10px;
+					    margin: 2px 5px 10px 5px;
+					    color: #000;
+					}
+					.cate-tags a:hover {
+
+	
+					    border: 1px solid #31447b;
+			
+					    color: #31447b;
+					}
+					.cata_slider .carousel-inner:hover{
+						overflow: hidden;
+					}
+					.viewcard{
+						text-align: center;
+					}
+					.viewcard:hover{	
+						box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12) !important;
+						z-index: 15;
+					}
+					.viewcard img{
+			
+						max-width: 100%;
+					}
+					.cata_content{
+						padding: 0;
+						margin: 0;
+					}
+					.cata_slider{
+						padding: 0;
+						margin: 0;
+					}
+					.cate_big_img{
+						max-height: 280px;
+						text-align: center;
+						overflow: hidden;
+					}
+					.cate_big_img img{
+						max-height: 280px;
+					}
+					.cate_big_img span{
+						position: absolute;
+						background-color: rgba(153,153,153,0.85);
+						text-align: center;
+						line-height: 38px;
+						height: 38px;
+						width: 100%;
+						bottom: 0;
+						left: 0;;
+					}
+					.cate_big_img:hover img{
+						webkit-transform: scale(1.05,1.05);
+						-moz-transform: scale(1.05,1.05);
+						-ms-transform: scale(1.05,1.05);
+						-o-transform: scale(1.05,1.05);
+						transform: scale(1.05,1.05);
+					}
+					.carousel-indicators{
+						bottom: 0;
+						margin-bottom: 0;
+
+					}
+					.carousel-indicators li{
+						border: 1px solid #31447b;
+						
+					}
+					.carousel-indicators .active{
+						background-color: #31447b;
+						width: 10px;
+						height: 10px;
+						margin: 1px;
+					}
+					.cata_items{
+						padding: 0px;
+						margin: 0px;
+					}
+					.cata_items .viewcard img{
+			
+						min-height: 110px;
+					}
+					.cata_items .viewcard:hover img{
+			
+						webkit-transform: translateX(5px);
+						-moz-transform: translateX(5px);
+						-ms-transform: translateX(5px);
+						-o-transform: translateX(5px);
+						transform: translateX(5px);
+					}
+					.cata_items .viewcard p{
+			
+						line-height: 30px;
+						height: 30px;
+						margin: 0;
+					}
+
+					.block_brand_logo{
+						padding: 5px;
+						border-top: 1px solid rgba(49, 68, 123, 0.44);
+						border-bottom: 1px solid rgba(49, 68, 123, 0.44);
+
+					}
+					.block_logo img{
+						
+					}
+					.block_logo img:hover{
+						box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12) !important;
+					}
+				</style>
+				<div class="block_catalogies_wrap ">
+					<div class="block_catalogy row">
+						<div class="col-xs-12 cata_header">
+							<div class="col-xs-3 cata_tittle">
+								<span>Thời trang nam</span>
+							</div>
+							<div class="col-xs-9 cate-tags">
+								<a href="https://www.sendo.vn/thoi-trang-nam/ao-nam/ao-thun/" title="Thun Đẹp Từ 49K">Thun Đẹp Từ 49K</a>					
+								<a href="https://www.sendo.vn/thoi-trang-nam/quan-nam/quan-ngan-nam/" title="Quần Shorts">Quần Shorts</a>					
+								<a href="https://www.sendo.vn/thoi-trang-nam/quan-nam/quan-kaki/" title="Quần Kaki">Quần Kaki</a>					
+								<a href="https://www.sendo.vn/thoi-trang-nam/ao-khoac/" title="Khoác Chống Nắng">Khoác Chống Nắng</a>					
+								<a href="https://www.sendo.vn/thoi-trang-nam/quan-nam/quan-jean/" title="Jeans Rẻ Mới Về">Jeans Rẻ Mới Về</a>				
+							</div>
+						</div>
+						<div class="col-xs-12 cata_content">
+							<div class="col-xs-3 cata_slider">
+								<div class="carousel slide" id="myCarousel1">
+							        <div class="carousel-inner">
+							            <div class="item active">
+							                    <ul class="thumbnails items_list">
+							                        <li class="col-xs-6" style="padding: 0px;">
+							    						<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+														<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+							    						<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+														<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							 
+							                        
+							                    </ul>
+							              </div><!-- /Slide1 --> 
+							              <div class="item">
+							                    <ul class="thumbnails items_list">
+							                        <li class="col-xs-6" style="padding: 0px;">
+							    						<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+														<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+							    						<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+														<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							 
+							                        
+							                    </ul>
+							              </div><!-- /Slide1 --> 
+							              <div class="item">
+							                    <ul class="thumbnails items_list">
+							                        <li class="col-xs-6" style="padding: 0px;">
+							    						<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+														<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+							    						<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+														<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							 
+							                        
+							                    </ul>
+							              </div><!-- /Slide1 --> 
+							            
+							        </div>
+							        
+							       
+								   <div class="col-xs-12" style="height:20px;position:relative">
+							    <ol class="carousel-indicators " >
+								      <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
+								      <li data-target="#myCarousel1" data-slide-to="1"></li>
+								      <li data-target="#myCarousel1" data-slide-to="2"></li>
+								    </ol>
+								</div>
+				
+							                              
+							    </div><!-- /#myCarousel -->
+
+							</div>
+						
+							<div class="col-xs-4 cate_big_img">
+								
+									<a class="cate-view" title="Thun Giá Sốc" href="https://www.sendo.vn/thoi-trang-nam/ao-nam/" >
+				                        <img alt="Thun Giá Sốc" title="Thun Giá Sốc" src="https://media3.scdn.vn/img1/2016/3_24/771fe0_simg_63a662_340x340_maxb.jpg"	>
+				                        <span>Thun Giá Sốc</span>
+				                    </a>
+								
+							</div>
+							<div class="col-xs-5 cata_items">
+								 <div class="col-xs-4 viewcard" style="padding: 0px;">
+														
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            
+							     </div>
+							     <div class="col-xs-4 viewcard" style="padding: 0px;">
+														
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                           
+							     </div>	
+							     <div class="col-xs-4 viewcard" style="padding: 0px;">
+														
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            
+							     </div>	
+							     <div class="col-xs-4 viewcard" style="padding: 0px;">
+														
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                           
+							     </div>	
+							     <div class="col-xs-4 viewcard" style="padding: 0px;">
+														
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            
+							     </div>	
+							     <div class="col-xs-4 viewcard" style="padding: 0px;">
+														
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                           
+							     </div>			
+							</div>
+						</div>
+						<div class="col-xs-12 block_brand_logo ">
+							<div class="block_logo">
+											<a href="https://www.sendo.vn/thuong-hieu/lasenza/" title=""><img src="https://media3.scdn.vn/img2/2016/8_16/W91r5r_simg_361b9e_100x50_maxb.jpg" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/massimo-dutti/" title=""><img src="https://media3.scdn.vn/img1/2015/3_4/logo__2kdtna5ajol9r_simg_361b9e_100x50_maxb.jpg" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/uniqlo/" title=""><img src="https://media3.scdn.vn/img/2014/11_21/uniqlo_2jsrktn5ode7n_simg_361b9e_100x50_maxb.png" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/mango/" title=""><img src="https://media3.scdn.vn/img1/2014/12_15/logo__2k2dp22p4o41q_simg_361b9e_100x50_maxb.jpg" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/abercrombie-and-fitch/" title=""><img src="https://media3.scdn.vn/img1/2014/12_10/logo__2k1kq3picbphh_simg_361b9e_100x50_maxb.jpg" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/zara/" title=""><img src="https://media3.scdn.vn/img/2014/10_21/zara_logo_2jobc9d0ei6go_simg_361b9e_100x50_maxb.png" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/h-m/" title=""><img src="https://media3.scdn.vn/img/2014/10_14/hm_2jnbp0o69b88b_simg_361b9e_100x50_maxb.png" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/forever-21/" title=""><img src="https://media3.scdn.vn/img1/2015/9_7/622a61_simg_361b9e_100x50_maxb.jpg" alt="" height="50" width="100"></a>
+							</div>
+						</div>
+					</div>
+
+
+
+					<!-- block 2 -->
+					<div class="block_catalogy row">
+						<div class="col-xs-12 cata_header">
+							<div class="col-xs-3 cata_tittle">
+								<span>Thời trang nam</span>
+							</div>
+							<div class="col-xs-9 cate-tags">
+								<a href="https://www.sendo.vn/thoi-trang-nam/ao-nam/ao-thun/" title="Thun Đẹp Từ 49K">Thun Đẹp Từ 49K</a>					
+								<a href="https://www.sendo.vn/thoi-trang-nam/quan-nam/quan-ngan-nam/" title="Quần Shorts">Quần Shorts</a>					
+								<a href="https://www.sendo.vn/thoi-trang-nam/quan-nam/quan-kaki/" title="Quần Kaki">Quần Kaki</a>					
+								<a href="https://www.sendo.vn/thoi-trang-nam/ao-khoac/" title="Khoác Chống Nắng">Khoác Chống Nắng</a>					
+								<a href="https://www.sendo.vn/thoi-trang-nam/quan-nam/quan-jean/" title="Jeans Rẻ Mới Về">Jeans Rẻ Mới Về</a>				
+							</div>
+						</div>
+						<div class="col-xs-12 cata_content">
+							<div class="col-xs-3 cata_slider">
+								<div class="carousel slide" id="myCarousel1">
+							        <div class="carousel-inner">
+							            <div class="item active">
+							                    <ul class="thumbnails items_list">
+							                        <li class="col-xs-6" style="padding: 0px;">
+							    						<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+														<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+							    						<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+														<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							 
+							                        
+							                    </ul>
+							              </div><!-- /Slide1 --> 
+							              <div class="item">
+							                    <ul class="thumbnails items_list">
+							                        <li class="col-xs-6" style="padding: 0px;">
+							    						<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+														<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+							    						<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+														<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							 
+							                        
+							                    </ul>
+							              </div><!-- /Slide1 --> 
+							              <div class="item">
+							                    <ul class="thumbnails items_list">
+							                        <li class="col-xs-6" style="padding: 0px;">
+							    						<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+														<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+							    						<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+														<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							 
+							                        
+							                    </ul>
+							              </div><!-- /Slide1 --> 
+							            
+							        </div>
+							        
+							       
+								   <div class="col-xs-12" style="height:20px;position:relative">
+							    <ol class="carousel-indicators " >
+								      <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
+								      <li data-target="#myCarousel1" data-slide-to="1"></li>
+								      <li data-target="#myCarousel1" data-slide-to="2"></li>
+								    </ol>
+								</div>
+				
+							                              
+							    </div><!-- /#myCarousel -->
+
+							</div>
+						
+							<div class="col-xs-4 cate_big_img">
+								
+									<a class="cate-view" title="Thun Giá Sốc" href="https://www.sendo.vn/thoi-trang-nam/ao-nam/" >
+				                        <img alt="Thun Giá Sốc" title="Thun Giá Sốc" src="https://media3.scdn.vn/img1/2016/3_24/771fe0_simg_63a662_340x340_maxb.jpg"	>
+				                        <span>Thun Giá Sốc</span>
+				                    </a>
+								
+							</div>
+							<div class="col-xs-5 cata_items">
+								 <div class="col-xs-4 viewcard" style="padding: 0px;">
+														
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            
+							     </div>
+							     <div class="col-xs-4 viewcard" style="padding: 0px;">
+														
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                           
+							     </div>	
+							     <div class="col-xs-4 viewcard" style="padding: 0px;">
+														
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            
+							     </div>	
+							     <div class="col-xs-4 viewcard" style="padding: 0px;">
+														
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                           
+							     </div>	
+							     <div class="col-xs-4 viewcard" style="padding: 0px;">
+														
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            
+							     </div>	
+							     <div class="col-xs-4 viewcard" style="padding: 0px;">
+														
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                           
+							     </div>			
+							</div>
+						</div>
+						<div class="col-xs-12 block_brand_logo ">
+							<div class="block_logo">
+											<a href="https://www.sendo.vn/thuong-hieu/lasenza/" title=""><img src="https://media3.scdn.vn/img2/2016/8_16/W91r5r_simg_361b9e_100x50_maxb.jpg" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/massimo-dutti/" title=""><img src="https://media3.scdn.vn/img1/2015/3_4/logo__2kdtna5ajol9r_simg_361b9e_100x50_maxb.jpg" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/uniqlo/" title=""><img src="https://media3.scdn.vn/img/2014/11_21/uniqlo_2jsrktn5ode7n_simg_361b9e_100x50_maxb.png" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/mango/" title=""><img src="https://media3.scdn.vn/img1/2014/12_15/logo__2k2dp22p4o41q_simg_361b9e_100x50_maxb.jpg" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/abercrombie-and-fitch/" title=""><img src="https://media3.scdn.vn/img1/2014/12_10/logo__2k1kq3picbphh_simg_361b9e_100x50_maxb.jpg" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/zara/" title=""><img src="https://media3.scdn.vn/img/2014/10_21/zara_logo_2jobc9d0ei6go_simg_361b9e_100x50_maxb.png" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/h-m/" title=""><img src="https://media3.scdn.vn/img/2014/10_14/hm_2jnbp0o69b88b_simg_361b9e_100x50_maxb.png" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/forever-21/" title=""><img src="https://media3.scdn.vn/img1/2015/9_7/622a61_simg_361b9e_100x50_maxb.jpg" alt="" height="50" width="100"></a>
+							</div>
+						</div>
+					</div>
+					<!-- block 3 -->
+					<div class="block_catalogy row">
+						<div class="col-xs-12 cata_header">
+							<div class="col-xs-3 cata_tittle">
+								<span>Thời trang nam</span>
+							</div>
+							<div class="col-xs-9 cate-tags">
+								<a href="https://www.sendo.vn/thoi-trang-nam/ao-nam/ao-thun/" title="Thun Đẹp Từ 49K">Thun Đẹp Từ 49K</a>					
+								<a href="https://www.sendo.vn/thoi-trang-nam/quan-nam/quan-ngan-nam/" title="Quần Shorts">Quần Shorts</a>					
+								<a href="https://www.sendo.vn/thoi-trang-nam/quan-nam/quan-kaki/" title="Quần Kaki">Quần Kaki</a>					
+								<a href="https://www.sendo.vn/thoi-trang-nam/ao-khoac/" title="Khoác Chống Nắng">Khoác Chống Nắng</a>					
+								<a href="https://www.sendo.vn/thoi-trang-nam/quan-nam/quan-jean/" title="Jeans Rẻ Mới Về">Jeans Rẻ Mới Về</a>				
+							</div>
+						</div>
+						<div class="col-xs-12 cata_content">
+							<div class="col-xs-3 cata_slider">
+								<div class="carousel slide" id="myCarousel1">
+							        <div class="carousel-inner">
+							            <div class="item active">
+							                    <ul class="thumbnails items_list">
+							                        <li class="col-xs-6" style="padding: 0px;">
+							    						<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+														<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+							    						<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+														<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							 
+							                        
+							                    </ul>
+							              </div><!-- /Slide1 --> 
+							              <div class="item">
+							                    <ul class="thumbnails items_list">
+							                        <li class="col-xs-6" style="padding: 0px;">
+							    						<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+														<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+							    						<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+														<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							 
+							                        
+							                    </ul>
+							              </div><!-- /Slide1 --> 
+							              <div class="item">
+							                    <ul class="thumbnails items_list">
+							                        <li class="col-xs-6" style="padding: 0px;">
+							    						<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+														<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+							    						<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+														<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							 
+							                        
+							                    </ul>
+							              </div><!-- /Slide1 --> 
+							            
+							        </div>
+							        
+							       
+								   <div class="col-xs-12" style="height:20px;position:relative">
+							    <ol class="carousel-indicators " >
+								      <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
+								      <li data-target="#myCarousel1" data-slide-to="1"></li>
+								      <li data-target="#myCarousel1" data-slide-to="2"></li>
+								    </ol>
+								</div>
+				
+							                              
+							    </div><!-- /#myCarousel -->
+
+							</div>
+						
+							<div class="col-xs-4 cate_big_img">
+								
+									<a class="cate-view" title="Thun Giá Sốc" href="https://www.sendo.vn/thoi-trang-nam/ao-nam/" >
+				                        <img alt="Thun Giá Sốc" title="Thun Giá Sốc" src="https://media3.scdn.vn/img1/2016/3_24/771fe0_simg_63a662_340x340_maxb.jpg"	>
+				                        <span>Thun Giá Sốc</span>
+				                    </a>
+								
+							</div>
+							<div class="col-xs-5 cata_items">
+								 <div class="col-xs-4 viewcard" style="padding: 0px;">
+														
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            
+							     </div>
+							     <div class="col-xs-4 viewcard" style="padding: 0px;">
+														
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                           
+							     </div>	
+							     <div class="col-xs-4 viewcard" style="padding: 0px;">
+														
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            
+							     </div>	
+							     <div class="col-xs-4 viewcard" style="padding: 0px;">
+														
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                           
+							     </div>	
+							     <div class="col-xs-4 viewcard" style="padding: 0px;">
+														
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            
+							     </div>	
+							     <div class="col-xs-4 viewcard" style="padding: 0px;">
+														
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                           
+							     </div>			
+							</div>
+						</div>
+						<div class="col-xs-12 block_brand_logo ">
+							<div class="block_logo">
+											<a href="https://www.sendo.vn/thuong-hieu/lasenza/" title=""><img src="https://media3.scdn.vn/img2/2016/8_16/W91r5r_simg_361b9e_100x50_maxb.jpg" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/massimo-dutti/" title=""><img src="https://media3.scdn.vn/img1/2015/3_4/logo__2kdtna5ajol9r_simg_361b9e_100x50_maxb.jpg" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/uniqlo/" title=""><img src="https://media3.scdn.vn/img/2014/11_21/uniqlo_2jsrktn5ode7n_simg_361b9e_100x50_maxb.png" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/mango/" title=""><img src="https://media3.scdn.vn/img1/2014/12_15/logo__2k2dp22p4o41q_simg_361b9e_100x50_maxb.jpg" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/abercrombie-and-fitch/" title=""><img src="https://media3.scdn.vn/img1/2014/12_10/logo__2k1kq3picbphh_simg_361b9e_100x50_maxb.jpg" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/zara/" title=""><img src="https://media3.scdn.vn/img/2014/10_21/zara_logo_2jobc9d0ei6go_simg_361b9e_100x50_maxb.png" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/h-m/" title=""><img src="https://media3.scdn.vn/img/2014/10_14/hm_2jnbp0o69b88b_simg_361b9e_100x50_maxb.png" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/forever-21/" title=""><img src="https://media3.scdn.vn/img1/2015/9_7/622a61_simg_361b9e_100x50_maxb.jpg" alt="" height="50" width="100"></a>
+							</div>
+						</div>
+					</div>
+					<!-- block 4 -->
+					<div class="block_catalogy row">
+						<div class="col-xs-12 cata_header">
+							<div class="col-xs-3 cata_tittle">
+								<span>Thời trang nam</span>
+							</div>
+							<div class="col-xs-9 cate-tags">
+								<a href="https://www.sendo.vn/thoi-trang-nam/ao-nam/ao-thun/" title="Thun Đẹp Từ 49K">Thun Đẹp Từ 49K</a>					
+								<a href="https://www.sendo.vn/thoi-trang-nam/quan-nam/quan-ngan-nam/" title="Quần Shorts">Quần Shorts</a>					
+								<a href="https://www.sendo.vn/thoi-trang-nam/quan-nam/quan-kaki/" title="Quần Kaki">Quần Kaki</a>					
+								<a href="https://www.sendo.vn/thoi-trang-nam/ao-khoac/" title="Khoác Chống Nắng">Khoác Chống Nắng</a>					
+								<a href="https://www.sendo.vn/thoi-trang-nam/quan-nam/quan-jean/" title="Jeans Rẻ Mới Về">Jeans Rẻ Mới Về</a>				
+							</div>
+						</div>
+						<div class="col-xs-12 cata_content">
+							<div class="col-xs-3 cata_slider">
+								<div class="carousel slide" id="myCarousel1">
+							        <div class="carousel-inner">
+							            <div class="item active">
+							                    <ul class="thumbnails items_list">
+							                        <li class="col-xs-6" style="padding: 0px;">
+							    						<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+														<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+							    						<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+														<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							 
+							                        
+							                    </ul>
+							              </div><!-- /Slide1 --> 
+							              <div class="item">
+							                    <ul class="thumbnails items_list">
+							                        <li class="col-xs-6" style="padding: 0px;">
+							    						<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+														<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+							    						<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+														<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							 
+							                        
+							                    </ul>
+							              </div><!-- /Slide1 --> 
+							              <div class="item">
+							                    <ul class="thumbnails items_list">
+							                        <li class="col-xs-6" style="padding: 0px;">
+							    						<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+														<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+							    						<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							                        <li class="col-xs-6" style="padding: 0px;">
+														<div class="viewcard">
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            </div>
+							                        </li>
+							 
+							                        
+							                    </ul>
+							              </div><!-- /Slide1 --> 
+							            
+							        </div>
+							        
+							       
+								   <div class="col-xs-12" style="height:20px;position:relative">
+							    <ol class="carousel-indicators " >
+								      <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
+								      <li data-target="#myCarousel1" data-slide-to="1"></li>
+								      <li data-target="#myCarousel1" data-slide-to="2"></li>
+								    </ol>
+								</div>
+				
+							                              
+							    </div><!-- /#myCarousel -->
+
+							</div>
+						
+							<div class="col-xs-4 cate_big_img">
+								
+									<a class="cate-view" title="Thun Giá Sốc" href="https://www.sendo.vn/thoi-trang-nam/ao-nam/" >
+				                        <img alt="Thun Giá Sốc" title="Thun Giá Sốc" src="https://media3.scdn.vn/img1/2016/3_24/771fe0_simg_63a662_340x340_maxb.jpg"	>
+				                        <span>Thun Giá Sốc</span>
+				                    </a>
+								
+							</div>
+							<div class="col-xs-5 cata_items">
+								 <div class="col-xs-4 viewcard" style="padding: 0px;">
+														
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            
+							     </div>
+							     <div class="col-xs-4 viewcard" style="padding: 0px;">
+														
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                           
+							     </div>	
+							     <div class="col-xs-4 viewcard" style="padding: 0px;">
+														
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            
+							     </div>	
+							     <div class="col-xs-4 viewcard" style="padding: 0px;">
+														
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                           
+							     </div>	
+							     <div class="col-xs-4 viewcard" style="padding: 0px;">
+														
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                            
+							     </div>	
+							     <div class="col-xs-4 viewcard" style="padding: 0px;">
+														
+															
+																<img src="https://media3.scdn.vn/img1/2016/4_4/4fabe3_simg_3a7818_100x100_maxb.jpg" alt="">
+															
+															<div class="caption text-center">
+																
+																<p>Áo thể thao</p>
+													
+															</div>
+							                           
+							     </div>			
+							</div>
+						</div>
+						<div class="col-xs-12 block_brand_logo ">
+							<div class="block_logo">
+											<a href="https://www.sendo.vn/thuong-hieu/lasenza/" title=""><img src="https://media3.scdn.vn/img2/2016/8_16/W91r5r_simg_361b9e_100x50_maxb.jpg" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/massimo-dutti/" title=""><img src="https://media3.scdn.vn/img1/2015/3_4/logo__2kdtna5ajol9r_simg_361b9e_100x50_maxb.jpg" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/uniqlo/" title=""><img src="https://media3.scdn.vn/img/2014/11_21/uniqlo_2jsrktn5ode7n_simg_361b9e_100x50_maxb.png" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/mango/" title=""><img src="https://media3.scdn.vn/img1/2014/12_15/logo__2k2dp22p4o41q_simg_361b9e_100x50_maxb.jpg" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/abercrombie-and-fitch/" title=""><img src="https://media3.scdn.vn/img1/2014/12_10/logo__2k1kq3picbphh_simg_361b9e_100x50_maxb.jpg" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/zara/" title=""><img src="https://media3.scdn.vn/img/2014/10_21/zara_logo_2jobc9d0ei6go_simg_361b9e_100x50_maxb.png" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/h-m/" title=""><img src="https://media3.scdn.vn/img/2014/10_14/hm_2jnbp0o69b88b_simg_361b9e_100x50_maxb.png" alt="" height="50" width="100"></a>
+											<a href="https://www.sendo.vn/thuong-hieu/forever-21/" title=""><img src="https://media3.scdn.vn/img1/2015/9_7/622a61_simg_361b9e_100x50_maxb.jpg" alt="" height="50" width="100"></a>
+							</div>
+						</div>
+					</div>
+				</div>      
+
+		</div>
+	</div>
+
+
+
+	<!-- right menu -->
+
+	<div class="menu_right">
+		<div class="menu_right_top "></div>
+		<div class="menu_right_center ">
+			<div class="menu_right_wrap_items">
+				<div class="menu_right_item text-center ">
+					<a id="linkshoppingcart2"> <span class="glyphicon glyphicon-shopping-cart"></span> <br>
+						Giỏ hàng
+					</a>
+				</div>
+				<div class="menu_right_item text-center ">
+					<a id="linklikeproduct2"> <span class="glyphicon glyphicon-heart"></span>
+
+					</a>
+				</div>
+				<div class="menu_right_item text-center ">
+					<a id="linkratingproduct"> <span class="glyphicon glyphicon-star"></span>
+					</a>
+				</div>
+				<div class="menu_right_item text-center ">
+					<a id="linkviewproduct2"> <span class="glyphicon glyphicon-time"></span>
+					</a>
+				</div>
+				<div class="menu_right_item text-center ">
+					<a id="linkfeedback"> <span class="glyphicon glyphicon-comment"></span>
+					</a>
+				</div>
+				<!-- <div class="menu_right_item text-center ">
+              <a>
+                <span class="ico"></span>
+              </a>
+            </div> -->
+			</div>
+
+		</div>
+		<div class="menu_right_bottom scrollToTop">
+			<div class="menu_right_wrap_items">
+				<div class="menu_right_item text-center ">
+					<a id="scrolltoTop"> <span class="glyphicon glyphicon-chevron-up"></span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$("#scrolltoTop").click(function() {
+				$("html, body").animate({
+					scrollTop : 0
+				}, 600);
+				return false;
+			});
+		});
+	</script>
+</body>
+</html>
+<div id="dialogmanual" style="display: none">
+	<div class="row">
+		<div class="col-md-12">
+			<div id="content_message" style="color: black; font-size: 15px;"></div>
+		</div>
+	</div>
+</div>

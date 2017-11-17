@@ -1,0 +1,17 @@
+<div class="carousel slide" id="myCarousel_slide_recommend">
+									<div class="control-box pager" style="float: left">
+										<div
+											style="width: 30px; height: 50px; position: absolute; top: 0; text-align: center; padding: 17px 0px;">
+											<a data-slide="prev" href="#myCarousel_slide_recommend"
+												class=""><i class="glyphicon glyphicon-chevron-left"></i></a>
+										</div>
+										<div
+											style="width: 30px; height: 50px; position: absolute; top: 0; left: 50px; text-align: center; padding: 17px 0px;">
+											<a data-slide="next" href="#myCarousel_slide_recommend"
+												class=""><i class="glyphicon glyphicon-chevron-right"></i>
+										</div>
+									</div>
+									<div class="carousel-inner">
+										@content_slide
+									</div>
+								</div>

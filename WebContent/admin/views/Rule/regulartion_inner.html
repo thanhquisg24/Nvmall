@@ -1,0 +1,26 @@
+
+<div id="tt" class="easyui-tabs" style="width:100%;">
+	<div title="Qui Chế Mẫu" style="padding:5px;">
+	       <div  style=" margin-bottom: 5px ;padding-left: 7px;">
+	       		<textarea id="my_editor_regulartion" ></textarea>
+	       </div>
+	  <iframe id="form_target" name="form_target" style="display:none"></iframe>
+		<form id="my_form"  target="form_target" method="post" 
+					enctype="multipart/form-data" style="width:0px;height:0;overflow:hidden">
+		<input id="txtimage" name="txtimage" type="file" data-ideditor="my_editor_regulartion">
+		</form>	 	
+		
+		  <div style="  margin-bottom: 7px ;padding-left: 7px;">
+		      <a id="id_save_rule" class="easyui-linkbutton">Save</a>
+		  </div>
+		
+	</div>	<!-- end tab2 -->
+	
+	
+</div>		<!-- end main -->
+			  
+<!-- tab1 -->
+<script type="text/javascript" src="admin/easyui1-5/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="admin/js/jquery.ajaxfileupload.js"></script>
+<script type="text/javascript" src="admin/js/rule/add_edit_regulartion.js"></script>
+

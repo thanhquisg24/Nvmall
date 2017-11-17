@@ -1,0 +1,423 @@
+
+<input id="subtypeid_@id" value="@id" type="hidden">
+	<table id="iddatagriptab_@id" style="padding-bottom:150px;width:100%"></table>
+	<div id="tbartab_@id" style="padding:5px;height:auto;">
+		    <div class="barcontrol" style="margin-bottom:5px;display: none">
+		     <a id="ideditfunction_@id" class="easyui-linkbutton" iconCls="icon-edit" plain="true">Edit function</a>
+		        <!--  <a id="idadd_@id" class="easyui-linkbutton" iconCls="icon-add" plain="true">Add</a>
+		        <a id="idedit_@id" class="easyui-linkbutton" iconCls="icon-edit" plain="true">Edit</a>
+		        <a id="idremove_@id" class="easyui-linkbutton" iconCls="icon-remove" plain="true">Remove</a>
+		        <a id="btnvisible_@id"  class="easyui-linkbutton" iconCls="icon-lock" plain="true">Visble</a> 
+				<a id="btnunvisible_@id"  class="easyui-linkbutton" iconCls="icon-unlock" plain="true">Invisible</a>-->
+				<a id="btnviewbrand_@id" class="easyui-linkbutton" iconCls="icon-search" plain="true">View brand</a>
+		    </div>
+		    <div class="barsearch" style="display: none">
+		       <input id="ss_@id" style="width:350px"></input>
+		       <div id="mm_@id" style="width:120px">
+				
+				</div>
+		    </div>
+	</div>
+		
+			  
+
+
+<div id="dlgcreate_@id" class="easyui-dialog" title="Confirm" closed="true"
+	data-options="iconCls:'icon-save',minimizable:false,maximizable:false,closable:false,"
+	style="width: 500px; height: 200px; padding: 5px;">
+	<div class="easyui-layout" data-options="fit:true" style="padding:10px;">
+	<form id="ff_@id" method="post" style="display:none"  >
+				<input type="hidden" value="A" name="ptype" id="idptype_@id">
+				<input type="hidden" value="" name="parent_ofsub" id="id_parent_ofsub_@id">
+				<input type="hidden" value="" name="category_img" id="id_uploadsuccess_@id">
+				<input type="hidden" value="" name="parentid" id="id_vmall_@id">
+				<table class="tb_padding">
+					<tr style="width:100%">
+							<td>ID:</td>
+							<td>
+								<input class="easyui-validatebox easyui-textbox" style="width:200px;" type="text" name="product_type_id" id="idproduct_type_id_@id"  data-options="required:true" >
+							</td>
+					</tr>
+				
+					
+					<tr style="width:100%">
+								<td>Name:</td>
+								 <td><input class="easyui-validatebox easyui-textbox" style="width:200px;" type="text" name="product_type_name" id="idproduct_type_name_@id"  data-options="required:true" ></td>
+					</tr>
+					<tr style="width:100%">
+						<td colspan="2">
+						<label><input type="checkbox" value="0" name="islink" id="islink_@id"/> Allow customer to add product into this category</label>
+						</td>
+					</tr>
+				
+				</table>
+		</form>
+		
+		<form id="upload_immg_@id" style="display:none">
+			<table class="tb_padding">
+				<tr style="width:100%"> 
+							  <td>Image:</td>
+							<td>  
+							<input type="file"  name="txtimage_@id"  id="txtimage_@id"  style="width:200px">
+							<br>
+							<strong id="strongmessage_@id"> </strong>
+							
+							</td>
+					</tr>
+			
+			</table>
+		</form>
+			
+				
+	</div>
+</div>
+<script type="text/javascript" >
+$(function(){
+	var parent_@id=$("#subtypeid_@id").val();
+	if(parent_@id!=""){
+		load_datagrid_sub_@id();
+	}
+	$("#ideditfunction_@id").click(function(){
+		var id=get_single_id_select();
+		if(id==""){
+			$.messager.alert('Warning','Select row please!','warning');
+			return;
+		}
+		extras_GET_json(true,"ad/ad_Eproductypesub","get_prodcutypesubfull_by_id",{'id':id},function(data){
+    				$("#idfm_subid").textbox({readonly:true,value:data.id});
+    				$("#idfm_store_name").textbox('setValue',data.store_name);
+    				$('#dialog_function').data('sgrid','#iddatagriptab_@id');
+    				$('#dialog_function').dialog('open').dialog('center');
+		});
+	}); 
+	function get_single_id_select(){
+		 var checkedItems = $('#iddatagriptab_@id').datagrid('getChecked');
+		 if(checkedItems.length>0){
+			 return checkedItems[0].id;
+		 }
+		return "";
+	};
+	
+	$("#btnviewbrand_@id").click(function(){
+		var id=get_single_row_select();
+		if(id==""){
+			$.messager.alert('Warning','Select row please!','warning');
+			return;
+		}
+	  var tabtitle = 'Brand of ' + $("#iddatagriptab_@id").datagrid('getSelected').id;
+	  var stab=$('#tt').tabs('getTab',tabtitle);
+		  if(stab==null){
+				create_panel(id,tabtitle);
+		  }else{
+			  $('#tt').tabs('select',tabtitle);
+		  }
+		$("#iddatagriptab_@id").datagrid('clearChecked');
+	});
+	function create_panel(id,tabtitle){
+		$.get(extras_Hosting["apache"] +"admin/views/E_producttypesub/viewbrand_inner.html",function(data){
+			if(data!=null){
+				data=data.replace(/@2id/g,id);
+				$('#tt').tabs('add',{
+						id:'tab_'+id,
+			            title:tabtitle,
+			            content: '<div style="padding:5px">'+data+'</div>',
+			            closable: true, 
+			    });
+			}
+		});
+	}
+	
+	function load_datagrid_sub_@id(){
+		$("#iddatagriptab_@id").datagrid({
+			toolbar: '#tbartab_@id',
+		    url: extras_Hosting["tomcatSpring_context"]+'ad/ad_Eproductypesub/get_json_sub_append_to_datagrip.json?parentid='+parent_@id,
+		    idField:'product_type_id',
+		    remoteSort:false,
+		    singleSelect:true,
+		    columns:[[
+		        {field:'ck',checkbox:true},
+		        {field:'id',title:'ID#',width:200,halign:'left',sortable:true},
+		        {field:'product_type_id',title:'Type sub id',width:100,halign:'center',sortable:true},
+		        {field:'product_type_name',title:'Name',width:250,halign:'center',sortable:true},
+		        {field:'category_img',title:'Image',width:250,halign:'center',align:'center',sortable:true,formatter:extras_formatImg_datagrid},
+		        {field:'isvisible',title:'Is Visibled',width:100,halign:'center',align:'right',sortable:true,formatter:extras_formatstatus_datagrid},
+		        {field:'islink',title:'Is Link',width:100,halign:'center',align:'right',sortable:true,formatter:extras_formatstatus_datagrid},
+		        {field:'store_name',title:'Function Name',width:250,halign:'center',sortable:true}
+		    ]],
+		    pagination:true
+		});
+	}
+	load_mm_selector_@id(function(out){
+		if(out==true){
+			$('#ss_@id').searchbox({
+			    searcher:function(value,name){
+			       // alert(value + "," + name);
+			    	$('#iddatagriptab_@id').datagrid('clearChecked');
+			    	  $('#iddatagriptab_@id').datagrid('load',{
+			    		  	col:name,
+			    		  	val:value
+			    	    });
+			    },
+			    menu:'#mm_@id',
+			    prompt:'Please Input Value'
+			});
+
+		}
+	});
+	$("#islink_@id").change(function(){
+		if(this.checked){
+			this.value="1";
+		}else{
+			this.value="0";
+		}
+	});
+	function load_mm_selector_@id(callback){
+		$("#mm_@id").html('');   	
+		var pdata={'pcdtype':'CATGORYSUB','pcdname':'SEARCH'};
+    	extras_GET_json(true,"ad/AllcodeController","get_allcode_searchbox.json",pdata,function(data){
+    		if (data != null) {
+	    		var s1 = '';
+	            $.map(data, function(item) {
+					s1 += '<div data-options="name:' + item.cdval + '">'
+					+ item.cdcontent + '</div>';
+				});
+	        	$('#mm_@id').html(s1);
+	        	callback(true);
+	       
+    		}
+    	});
+	}
+	
+	$('#ff_@id').form({
+	    url:extras_Hosting["tomcatSpring_context"]+'ad/product_type_subController/add_update_catgory',
+	    onSubmit:function(){
+	    	
+	        return $(this).form('validate');
+	    },
+	    success:function(result){
+	    	//alert(result);
+	    	//var data = eval('(' + data + ')');
+	    	var data=JSON.parse(result);
+	        $.messager.alert('Info', data.message, 'info');
+	        if(data.f=="0"){
+	        	$("#dlgcreate_@id").dialog('close');
+	        	  	 clear_input_@id();
+	        		$('#iddatagriptab_@id').datagrid('clearChecked');
+	    	    	$('#iddatagriptab_@id').datagrid('reload');
+	        }
+	        
+	    }
+	});
+	 function clear_input_@id(){
+		 	$("#idproduct_type_id_@id").textbox({readonly:false,value:''});
+		 	$('#ff_@id').form('reset');
+		 	$('#upload_immg_@id').form('reset');
+	    	$("#strongmessage_@id").text("");
+	    }
+	 
+	 $("#idadd_@id").click(function(){
+			clear_input_@id();
+			//var parent_id=$('#cc').combogrid('getValue');
+			//var parent_name=$('#cc').combogrid('grid').datagrid('getSelected').product_type_name;
+		   var type = 'A';
+	        $("#dlgcreate_@id").css('display', 'block');
+	        $('#dlgcreate_@id').dialog({
+	            autoOpen: false,
+	            title: 'New  Category Sub :',
+	            width: 480,
+	            height: 350,
+	            buttons: [{
+	                text: 'OK',
+	                iconCls: 'icon-ok',
+	                handler: function() {
+	                	//$("#id_parentid").val(parent_id);
+	                	$("#idptype_@id").val(type);
+	                	$("#id_parent_ofsub_@id").val(parent_@id);
+	                	$("#idtextspan_@id").text($("#cc").combogrid('getValue'));
+	                	$("#id_vmall_@id").val($("#cc").combogrid('getValue'));			
+	                	$('#ff_@id').submit();
+	                }
+	            }, {
+	                text: 'Cancel',
+	                iconCls: 'icon-cancel',
+	                handler: function() {
+	                    $("#dlgcreate_@id").dialog('close');
+	                }
+	            }]
+	        });
+	     	$("#idtextspan_@id").text($("#cc").combogrid('getValue'));
+	        $("#dlgcreate_@id").dialog('open');
+	});
+	 
+	$("#idremove_@id").click(function(){
+			var ids=get_multi_row_select();
+			if(ids==""){
+				$.messager.alert('Warning','Select row please!');
+				return;
+			}
+			$.messager.confirm('Confirm','Are you sure you want to delete record?',function(r){
+			    if (r){
+			        extras_POST_json(true,"ad/product_type_subController","detele_catgory",{'str_id':ids},function(data){
+			        	$.messager.alert('Result',data.message);
+			        	if(data.f=="0"){
+			        		$('#iddatagriptab_@id').datagrid('clearChecked');
+			        		$('#iddatagriptab_@id').datagrid('reload');
+			        	}
+			        });
+			        	
+			        
+			    }
+			}); 
+			
+		});
+	function get_single_row_select(){
+		 var checkedItems = $('#iddatagriptab_@id').datagrid('getChecked');
+		 if(checkedItems.length>0){
+			 return checkedItems[0].product_type_id;
+		 }
+		return "";
+	};
+	function get_multi_row_select(){
+		 var checkedItems = $('#iddatagriptab_@id').datagrid('getChecked');
+		 if(checkedItems.length>0){
+			 var ids = [];
+		        $.each(checkedItems, function(index, item){
+		        	ids.push("'"+item.product_type_id+"'");
+		        });                
+		   return ids.join(",");
+		 }
+		 return ""; 
+	};
+	$("#btnvisible_@id").click(function() {
+		 visibled_catgory(true);
+	 });
+	 $("#btnunvisible_@id").click(function() {
+		 visibled_catgory(false);
+	 });
+	 
+	 function visibled_catgory(isvible){
+		 var status_visible=0;
+		 var alert_="";
+		 if(isvible){
+			 status_visible=1;
+			 alert_="Are you sure you want to visibled record?"
+			 
+		 }else{
+			 status_visible=0;
+			 alert_="Are you sure you want to unvisibled record?"
+		 }
+		var ids=get_multi_row_select();
+		if(ids==""){
+				$.messager.alert('Warning','Select row please!');
+				return;
+		}
+		 
+		 $.messager.confirm('Confirm',alert_,function(r){
+			    if (r){
+			        extras_POST_json(true,"ad/product_type_subController","visivled_catgory",{'str_id':ids,'visible':status_visible},function(data){
+			        	$.messager.alert('Result',data.message);
+			        	if(data.f=="0"){
+			        		$('#iddatagriptab_@id').datagrid('clearChecked');
+			        		$('#iddatagriptab_@id').datagrid('reload');
+			        	}
+			        });
+			    }
+			});
+		 }
+	 $("#idedit_@id").click(function(){
+			//alert(get_single_row_select(0));
+			var id=get_single_row_select();
+			if(id==""){
+				$.messager.alert('Warning','Select row please!');
+				return;
+			}
+			extras_GET_json(true,"ad/product_type_subController","get_catgory_by_id",{'id':id},function(data){
+	    		if (data != null) {
+	    				$("#id_uploadsuccess_@id").val(data.category_img);
+	    				$("#idtextspan_@id").text(data.product_type_vmall);
+	    				$("#islink_@id").value= data.islink;
+	    				if(data.islink==1){
+	    					$("#islink_@id").prop('checked',true);
+	    				}else{
+	    					$("#islink_@id").prop('checked',false);
+	    				}
+	    				$("#idproduct_type_id_@id").textbox({readonly:true,value:data.product_type_id});
+	    				$("#idproduct_type_name_@id").textbox('setValue',data.product_type_name);
+	    			    $("#strongmessage").html("<font color='green'>" + data.category_img + " </font>");	
+	    		}
+	    		var type = 'E';
+	            $("#dlgcreate_@id").css('display', 'block');
+	            $('#dlgcreate_@id').dialog({
+	                autoOpen: false,
+	                title: 'Edit  Category Sub:',
+	                width: 480,
+	                height: 350,
+	                buttons: [{
+	                    text: 'OK',
+	                    iconCls: 'icon-ok',
+	                    handler: function() {
+	                    	$("#idptype_@id").val(type);
+	                    	$("#id_parent_ofsub_@id").val(parent_@id);
+	                    	$("#id_vmall_@id").val($("#idtextspan_@id").text());
+	                    	$('#ff_@id').submit();
+	                    }
+	                }, {
+	                    text: 'Cancel',
+	                    iconCls: 'icon-cancel',
+	                    handler: function() {
+	                        $("#dlgcreate_@id").dialog('close');
+	                    }
+	                }]
+	            });
+	            $("#dlgcreate_@id").dialog('open');
+	    	});
+		});
+	 /* $("#btnremoveparrent_@id").click(function(){
+		 var ids=get_multi_row_select();
+			if(ids==""){
+				$.messager.alert('Warning','Select row please!');
+				return;
+			}
+			$.messager.confirm('Confirm','Do you want to remove these sub ?',function(r){
+			    if (r){
+			        extras_POST_json(true,"ad/product_type_subController","remove_sub_catgory",{'str_id':ids},function(data){
+			        	$.messager.alert('Result',data.message);
+			        	if(data.f=="0"){
+			        		$('#iddatagriptab_@id').datagrid('clearChecked');
+			        		$('#iddatagriptab_@id').datagrid('reload');
+			        	}
+			        });
+			        	
+			        
+			    }
+			}); 
+	 }); */
+	 $('input[name="txtimage_@id"]').ajaxfileupload({
+		    'action':  extras_Hosting["tomcatSpring_context"]+"ad/UploadController/upload_image_normal_withparam?folder=save_image_cate",
+		    'onComplete': function(response) {	
+		        if (response.status==false) {
+		        	$.messager.alert('Error',response.message,'error');
+		        	 $("#strongmessage_@id").html("<font color='red'>" + JSON.stringify(response.message) + " </font>");
+		        }
+		        if (response.status==true) {
+		        	//$.messager.alert('Info',response.message,'info');
+		            var pram = response.pram;
+		            $("#id_uploadsuccess_@id").val(pram);
+		            //$("#branchimg_@index").attr('src','upload/branch/'+pram);
+		            $("#strongmessage_@id").html("<font color='green'>" + JSON.stringify(response.message) + " </font>");
+		            
+		        }
+
+		    },
+		    'onStart': function() {
+		    	var fileSize = this.get(0).files[0].size;
+		     	if(fileSize>1024*1000){
+		     		$.messager.alert('Warning','File này có kích cỡ lớn hơn cho phép. Xin chọn hình ảnh khác!!','warning');
+		     		$("#id_uploadsuccess_@id").val('');
+		     		return false;
+		     	}
+		    }
+		});
+});	
+
+</script>	

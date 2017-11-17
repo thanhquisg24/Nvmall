@@ -1,0 +1,39 @@
+<div class="col-xs-3 box_product">
+						<div>@saleoff</div>
+						<div class="box_product_content boxshadow">
+							<div class="preview_product">
+								<a target="_blank" href="@detail" title="@nameproduct">
+									<img id="img_3148215" alt="@nameproduct" class="imgtodrag detail" is_impression="0" src="@imghref" >
+									
+								</a>
+								<span class="liked click_like" id="like_@idproduct">
+									<svg class="icon-favorite2"><use xlink:href="#icon-favorite2"></use></svg>							
+										@love								
+								</span>
+								
+							</div>							
+							<div class="price_product">
+								<span class="current_price">@newprice</span>
+								<span class="old_price">@oldprice</span>
+							</div>
+							<a target="_blank" class="tittle_product"  href="@detail" title="@nameproduct">    
+								@nameproduct                                    
+							</a>
+							<div class="social_product ">
+								<div class="count_buy ">
+									<span class="fi-shopping-bag"></span>
+									<strong>@num_buy</strong>
+								</div>
+								<div class="count_view ">
+									<span class="fi-eye"></span>
+									<strong>@num_view</strong>
+								</div>
+							</div>
+							<div class="store_product">
+								<svg class="icon-khiensen icon"><use xlink:href="#icon-khiensen"></use></svg>
+									<a class="name_store" href="@hrefshop" title="@nameproduct">@shopname                                
+								</a>
+
+							</div>
+						</div>
+					</div>

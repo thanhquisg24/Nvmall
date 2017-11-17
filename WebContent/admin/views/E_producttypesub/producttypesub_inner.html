@@ -1,0 +1,113 @@
+
+	<div id="tt" class="easyui-tabs" style="width:100%;">
+		<div title="Category Sub" style="padding:5px;">
+	
+				<table id="iddatagrip" style="width:100%;"></table>
+				
+				<div id="tbar" style="padding:5px;height:auto">
+					    <div style="margin-bottom:5px">
+					      <a id="ideditfunction" class="easyui-linkbutton" iconCls="icon-edit" plain="true">Edit function</a>
+					      <!--
+					        <a id="idadd" class="easyui-linkbutton" iconCls="icon-add" plain="true">Add</a>
+					        <a id="idedit" class="easyui-linkbutton" iconCls="icon-edit" plain="true">Edit</a>
+					      
+					        <a id="idremove" class="easyui-linkbutton" iconCls="icon-remove" plain="true">Remove</a>
+					        <a id="btnvisible"  class="easyui-linkbutton" iconCls="icon-lock" plain="true">Visible</a> 
+							<a id="btnunvisible"  class="easyui-linkbutton" iconCls="icon-unlock" plain="true">Invisible</a>
+							-->
+							<a id="btneditsub" class="easyui-linkbutton" iconCls="icon-search" plain="true">View sub</a>
+					         <!-- <a id="id_d" class="easyui-linkbutton" iconCls="icon-add" plain="true">ddd</a> -->
+					        
+					    </div>
+					    <div>
+					    	<input id="cc" >
+					       <input id="ss" style="width:350px"></input>
+					       <div id="mm" style="width:120px">
+							
+							</div>
+					    </div>
+				</div>
+				
+				
+				
+		</div>
+	</div>
+				  
+
+
+<div id="dlgcreate" class="easyui-dialog" title="Confirm" closed="true"
+	data-options="iconCls:'icon-save',minimizable:false,maximizable:false,closable:false"
+	style="width: 480px;">
+	<div style="margin:0;padding:20px 50px">
+	<div style="margin-bottom:20px;font-size:14px;border-bottom:1px solid #ccc">Catgory</div>
+	<form id="ff" method="post"  >
+				<input type="hidden" value="A" name="ptype" id="idptype">
+				<input type="hidden" value="" name="category_img" id="id_uploadsuccess">
+				<table class="tb_padding">
+					<tr style="width:100%">
+							<td>Catgory vmall:</td>
+							<td><input id="cc2" style="width:200px" name="parentid"></td>
+					</tr>
+					<tr style="width:100%">
+							<td>ID:</td>
+							<td><input class="easyui-validatebox easyui-textbox" style="width:200px" type="text" name="product_type_id" id="idproduct_type_id"  data-options="required:true" ></td>
+					</tr>
+				
+					
+					<tr style="width:100%">
+								<td>Name:</td>
+								 <td><input class="easyui-validatebox easyui-textbox" type="text" name="product_type_name" id="idproduct_type_name"  data-options="required:true" style="width:200px"></td>
+					</tr>
+					<tr style="width:100%">
+						<td colspan="2">
+						<label><input type="checkbox" value="0" name="islink" id="islink"/> Allow customer to add product into this category</label>
+						</td>
+					</tr>
+				</table>
+		</form>
+
+			<table class="tb_padding">
+				<tr>
+							  <td>Image:</td>
+							<td>  
+							<input class="easyui-filebox"  name="txtimage"  id="txtimage"  data-options="prompt:'Choose a file...'" style="width:240px">
+							<br>
+							<strong id="strongmessage"> </strong>
+							
+							</td>
+					</tr>
+			
+			</table>
+		</div>
+</div>
+<div id="dialog_choosebrand" style="padding:5px" data-sgrid="" data-sproductypesub="">
+		<table id="dg_brand" style="width:100%;"></table>	
+				<div id="tbar_brand" style="padding:5px;height:auto">
+				    <div>
+				       <input id="ss_brand" style="width:350px"></input>
+				       <div id="mm_brand" style="width:170px">
+						
+						</div>
+				    </div>
+				</div>
+</div>	
+
+<div id="dialog_function" data-sgrid="">
+		<form id="fm_function" method="post" novalidate style="margin:0;padding:20px 50px">
+			<div style="margin-bottom:20px;font-size:14px;border-bottom:1px solid #ccc">Catgory function</div>
+			<div style="margin-bottom:10px">
+				<input id="idfm_subid" name="id" class="easyui-textbox" required="true"  labelPosition="top" label="ID#:" style="width:100%">
+			</div>
+			<div style="margin-bottom:10px">
+				<input  id="idfm_store_name" name="store_name" class="easyui-textbox"  labelPosition="top" label="Function Name:" style="width:100%">
+			</div>
+		</form>
+</div>	
+
+
+
+<script type="text/javascript" src="admin/js/jquery.ajaxfileupload.js"></script>
+<script type="text/javascript" src="admin/easyui1-5/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="admin/js/E_producttypesub/main.js"></script>	
+<script type="text/javascript" src="admin/js/E_producttypesub/dialog_choosebrand.js"></script>	
+<script type="text/javascript" src="admin/js/E_producttypesub/dialog_edit_proceduce.js"></script>

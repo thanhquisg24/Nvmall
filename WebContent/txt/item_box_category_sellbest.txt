@@ -1,0 +1,19 @@
+						<div class="ttl-category">Sản phẩm bán chạy</div>						
+						<div class="control-box-qt pager">
+								<div  data-slide="next" href="#myCarousel-sellbest" class="control_button btn_next" style="float:left;cursor:pointer;" >
+									<i class="glyphicon glyphicon-chevron-left"></i>
+								</div>
+								<div  data-slide="prev" href="#myCarousel-sellbest" class="control_button btn_prev"  style="float:left;cursor:pointer;">
+									<i class="glyphicon glyphicon-chevron-right"></i>
+								</div>
+						</div>
+						<div class="block_recommend">
+							<div class="carousel slide" id="myCarousel-sellbest" style="background:white">
+								<div class="carousel-inner" >	
+									@content_slide										
+								</div>								
+							
+							</div>
+							<!-- /#myCarousel -->
+						</div>
+						<!-- /.col-xs-12 -->

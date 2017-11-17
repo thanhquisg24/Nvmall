@@ -1,0 +1,20 @@
+<li class="list-group-item" style="display:block">
+						<div class="menu_item_box">
+							<a href="category.html?id$@id">
+								<img src="@srcicon" class="icon-menu" />
+								@category_name<span class="badge">@isnew</span>
+							</a>
+						</div>
+						<div class="cataloge_list_lever2">
+							<div class="cataloge_list_lever2_inner">
+								<div class="cataloge_list_lever2_list">
+									@menu_sub
+								</div>
+								<div class="iconlogo_list">									
+									 <div class="list-group ">									
+				                      @content_brand
+				                    </div>
+			                    </div>
+							</div>
+						</div>
+					</li>

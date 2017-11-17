@@ -1,0 +1,39 @@
+<div id="p" style="padding:10px;width:100%;">
+	
+
+<form id="ff" method="post"  >
+<input type="hidden" value="A" name="ptype" id="idptype">
+ <table>
+ 			 <tr id="rowid" style="display:none;">
+                <td>Id:</td>
+                <td> <input class="" type="text" name="id" id="id_id" readonly ></td>
+            </tr>
+ 			
+            <tr>
+                <td>Name:</td>
+                <td> <input class="easyui-validatebox easyui-textbox" type="text" name="name" id="idname"  data-options="required:true" ></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input class="easyui-validatebox easyui-textbox" type="text" name="email"  id="idemail"  data-options="required:true,validType:'email'" ></td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><input class="easyui-validatebox easyui-textbox" type="text" name="address" id="idaddress" data-options="required:true"></td>
+            </tr>
+            <tr>
+                <td>Phone:</td>
+                 <td>  <input class="easyui-validatebox easyui-textbox" type="text" name="phone" id="idphone"  data-options="required:true"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td> <input type="submit" value="Save"></td>
+           
+            </tr>
+        </table>
+</form>
+
+</div>
+
+<script type="text/javascript" src="admin/easyui1-5/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="admin/js/democrud/exce.js"></script>	
